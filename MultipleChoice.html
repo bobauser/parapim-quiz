@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgaver</title>
+    <script src="temaer.js"></script>
+    <script src="CreateGetStartExamFunctions.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animasjoner.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+
+    <script>
+        var questionElements
+
+        var countDownTimer = 0
+        var oppgaveCount = 1
+        var infiniteOppgaver = false
+        var canGivePointsDuringExam = false
+        var countdownvalue
+        let currentQuestion = 0
+
+        let questionIndexList = []
+        var jsonDataElement = document.getElementById("json-data");
+        var wordElement;
+        var jsonData;
+
+        var questionfromjson
+        var answerfromjson
+        var alternativesfromjson
+        var currentVindu = "start-page"
+
+        let questionAnswersSave = []
+        let pointsSave = []
+        let maxPoints = 0
+
+        // URL til JSON-filen
+        var jsonFileURL = "multiplechoice.json"; // Bytt ut med din egen filsti
+        let vinduer = ["start-page", "questions-page", "results-page"]
+        document.addEventListener('DOMContentLoaded', function() {
+            getExam();
+            FindQuestionElements()
+            buttons.forEach(function(button) {
+                button.addEventListener("click", function() {
+                    window.location.href = "MultipleChoice.html";
+                });
+            });
+
+
+
+            /*
+            document.getElementById('prev-question').onclick = () => {
+                if (currentQuestionIndex > 0) {
+                    currentQuestionIndex--;
+                    displayQuestion(currentQuestionIndex);
+                }
+            };
+
+            document.getElementById('next-question').onclick = () => {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    displayQuestion(currentQuestionIndex);
+                }
+            };*/
+        });
+        async function getExam() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", jsonFileURL, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    jsonData = JSON.parse(xhr.responseText);
+                    //callback(jsonData2); // Pass the data to the callback
+                    console.log(jsonData)
+                }
+            }
+            xhr.send();
+        }
+
+        function TrashLine() {
+            questionElements[currentQuestion].classList.remove("finished")
+            questionElements[currentQuestion] = ""
+            //document.getElementById("alternativ-felt").value = "" //********************************************************
+        }
+
+        async function createPDFfromElement(elementId) {
+            const element = document.getElementById(elementId);
+            const karakterer = document.getElementById("result-page-to");
+            element.appendChild(karakterer.cloneNode(true)); // Klon innholdet i stedet for å bruke innerHTML
+
+            try {
+                const canvas = await html2canvas(element, { logging: true }); // Aktiver logging for debugging
+
+                const imgData = canvas.toDataURL('image/png');
+
+                const pdf = new jspdf.jsPDF();
+                pdf.addImage(imgData, 'PNG', 0, 0, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight());
+                pdf.save('download.pdf');
+            } catch (error) {
+                console.error('Error creating PDF', error);
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<section id="start-page" class="card show">
+    <header>
+        <h2>Webapplikasjoner</h2>
+        <h1>Start Eksamen</h1>
+    </header>
+    <div>
+        <span style="font-style: italic">Du får mulighet til å gjøre noen få oppgaver, eller alle. Det varierer hvor mange spørsmål det er (og hvilke som har svar) ettersom denne siden oppdateres etterhvert.</span> <br>
+        <input type="checkbox" id="use-countdown-checkbox">
+        <label>Bruk Nedtelling (I minutter)</label>
+        <input type="number" placeholder="Tid" id="countdown-number-field" value="1" /> <br>
+
+        <label>Antall oppgaver (Maks: 250 X)</label> <br>
+        <input type="number" placeholder="Antall oppgaver" id="amount-tasks-checkbox" value="10" /> <br>
+
+        <input type="checkbox" id="infinite-oppgaver-checkbox">
+        <label>Uendelig Oppgaver?</label> <br>
+
+        <input type="checkbox" id="give-points-checkbox">
+        <label>Kan se fasit og gi poeng under Eksamen?</label> <br>
+
+        <button class="default" onclick="StartExam()">Start</button>
+    </div>
+</section>
+<section id="questions-page" class="card dont-show" >
+    <header>
+        <h1>Webapplikasjoner</h1>
+    </header>
+    <main>
+        <div class="scrollable-div">
+            <p id="exam-timer">Tid igjen: 90</p>
+            <ul id="question-select-container">
+                <li class="question-box-element">1</li>
+            </ul>
+            <p id="question-number">Spørsmål <span>X</span></spanZ></p>
+            <p id="question-element"></p>
+            <span id="answer-element"></span>
+            <div class="button-container">
+                <label>Svar her</label> <br> <br>
+            </div>
+            <div class="button-container">
+                <button class="default yellow" onclick="getResults()" class="green-bg">Lever inn</button>
+                <button class="default nav-spørsmål" id="neste-spørsmål" datakey="1.5" onclick="ArrowButtons(true)">Neste Spørsmål</button>
+                <button class="default nav-spørsmål" id="forrige-spørsmål" datakey="0.5" onclick="ArrowButtons(false)">Forrige Spørsmål</button>
+            </div>
+            <div class="segmented-button" id="points-field">
+                <button class="left-button">Gi poeng +1</button>
+                <button class="right-button">Ikke gi poeng 0</button>
+                <button class="default" onclick="DisplayAnswer()">Hent svaret</button>
+            </div>
+            <ul id="alternativ-felt">
+
+
+                <li datakey="alt-1"><button onclick="TypeAlternative('alt-1')">Svar1</button></li>
+                <li datakey="alt-2"><button onclick="TypeAlternative('alt-2')">Svar2</button></li>
+                <li datakey="alt-3"><button onclick="TypeAlternative('alt-3')">Svar3</button></li>
+                <li datakey="alt-4"><button onclick="TypeAlternative('alt-4')">Svar4</button></li>
+
+
+            </ul>
+
+            <br> <button class="default red-bg" onclick="TrashLine()">Fjern</button>
+        </div>
+    </main>
+</section>
+<section id="results-page" class="card dont-show">
+    <header>
+        <h1>Resultater</h1>
+    </header>
+    <div>
+        <div id="result-page-en">
+            <p>Du har rettet <span id="rettet-antaller"></span></p>
+            <div id="results-list"></div>
+            <button class="default" onclick="FerdigÅRette()">Ferdig å rette</button>
+        </div>
+        <div id="result-page-to" style="display: none">
+            <p>Du har fått <span id="poeng-oppnåd">X</span> poeng av <span id="maks-poengsum">X</span> mulige <i class="fa-solid fa-circle-info"></i></p>
+            <h2>Din karakter er en -</h2>
+            <h1>Karakter</h1>
+            <button onclick="createPDFfromElement()">Skriv ut Eksamen som PDF</button>
+        </div>
+    </div>
+</section>
+</body>
+</html>
+
+<script>
+    var buttons = document.querySelectorAll(".link-button");
+    function Reset() {
+        document.getElementById("question-element").innerHTML = ""
+        document.getElementById("answer-element").innerHTML = ""
+    }
+    function TypeAlternative() {
+        var textarea = document.getElementById("answer-area") //********************************************************
+        if (textarea.value !== undefined && textarea.value !== null) {
+            questionAnswersSave[currentQuestion] = textarea.value;
+        }
+        if (questionAnswersSave[currentQuestion] != "") {
+            questionElements[currentQuestion].classList.add("finished")
+        } else {
+            questionElements[currentQuestion].classList.remove("finished")
+        }
+    }
+    function visVindu() {
+        maxPoints = questionIndexList.length
+        document.getElementById("maks-poengsum").innerHTML = maxPoints
+        if (vinduer.includes(currentVindu)) {
+            var currentvinduIndex = vinduer.indexOf(currentVindu);
+            if (currentvinduIndex < vinduer.length - 1) {
+                var currvind = document.querySelector(`#${vinduer[currentvinduIndex]}`);
+                var nextvindu = document.querySelector(`#${vinduer[currentvinduIndex + 1]}`);
+
+                if (currvind && nextvindu) {
+                    currvind.classList.remove("show");
+                    currvind.classList.add("dont-show");
+                    nextvindu.classList.remove("dont-show");
+                    nextvindu.classList.add("show");
+                    currentVindu = vinduer[currentvinduIndex + 1];
+                } else {
+                    console.log("Elements not found.");
+                }
+            } else {
+                console.log("No more elements in the array.");
+            }
+        } else {
+            console.log("CurrentVindu not found in vinduer array.");
+        }
+    }
+
+    function startCountDown(minutes) {
+        countDownTimer = minutes * 60; // Konverter minutter til sekunder
+        var timerInterval = setInterval(function() {
+            var minutesLeft = Math.floor(countDownTimer / 60);
+            var secondsLeft = countDownTimer % 60;
+
+            // Formatter tiden som MM:SS
+            document.getElementById("exam-timer").innerText = "Tid igjen: " +
+                minutesLeft.toString().padStart(2, '0') + ":" +
+                secondsLeft.toString().padStart(2, '0');
+
+            if (countDownTimer <= 0) {
+                clearInterval(timerInterval);
+                // Plasser din egen kode her. For eksempel:
+                // alert('Tiden er ute!');
+                getResults()
+            }
+            countDownTimer--;
+        }, 1000); // Oppdaterer hvert sekund
+    }
+
+
+    function GetQuestion(index) {
+        questionfromjson = Object.keys(jsonData[index].question)
+        answerfromjson = Object.keys(jsonData[index].answer)
+        alternativesfromjson = Object.keys(jsonData[index].options)
+        let objectreturn = {
+            question: questionfromjson,
+            answer: answerfromjson,
+            options: alternativesfromjson
+        }
+        return objectreturn
+    }
+    function GetRandomQuestion() {
+        var wordCount = Object.keys(jsonData).length;
+        var randomIndex = Math.floor(Math.random() * wordCount);
+
+        // Hent spørsmål 1 og svarene for det valgte temaet
+        questionfromjson = Object.keys(jsonData[randomIndex].question)
+        answerfromjson = Object.keys(jsonData[randomIndex].answer)
+        alternativesfromjson = Object.keys(jsonData[randomIndex].answer)
+        DisplayQuestion()
+    }
+
+    function ArrowButtons(next) {
+        if (next) {
+            NesteSpørsmål(false, "next")
+        } else {
+            NesteSpørsmål(false, "prev")
+        }
+    }
+
+    function NesteSpørsmål(index, value) { //-1 +1
+        if (infiniteOppgaver) {
+            GetRandomQuestion()
+        }
+        else {
+            if (typeof index === "number") {
+                currentQuestion = index;
+            }
+            if (value !== false) {
+                if (value === "next")
+                    currentQuestion += 1
+                else
+                    currentQuestion -= 1
+            }
+            /*
+            //logic to pick next question
+            ChangeQuestion(i)*/
+            try {
+                loadQuestion()
+                updateNavigationButtons()
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    }
+
+    function loadQuestion() {
+        if (questionOrder.length > 0 && currentQuestionIndex < questionOrder.length) {
+            let xYelementFromList = questionIndexList[currentQuestion]
+            document.querySelector("#question-number span").innerHTML = (currentQuestion + 1)
+            const questionIndex = questionOrder[currentQuestionIndex];
+            const currentQuestion = jsonData[questionIndex];
+            const questionEl = document.getElementById('question');
+            const optionsEl = document.getElementById('options');
+            const feedbackEl = document.getElementById('feedback');
+            const correctAnswerEl = document.getElementById('correct-answer');
+            questionEl.textContent = currentQuestion.question;
+            optionsEl.innerHTML = ''; // Fjern tidligere alternativer
+            feedbackEl.textContent = ''; // Fjern tidligere tilbakemelding
+            correctAnswerEl.textContent = '';
+            currentAnswer = jsonData[questionOrder[currentQuestionIndex]].answer;
+
+            currentQuestion.options.forEach(option => {
+                const li = document.createElement('li');
+                li.textContent = option;
+                li.addEventListener('click', () => {
+                    selectOption(option, li);
+                    TypeAlternative();
+                });
+                optionsEl.appendChild(li);
+            });
+            GetQuestion(xYelementFromList)
+            DisplayQuestion()
+        }
+    }
+
+    function UpdateQuestion() {
+    }
+    function generateList(count) {
+        let listo = [];
+        let availableIndexes = Array.from({ length: count }, (_, i) => i);
+
+        while (listo.length < count) {
+            const randomIndex = Math.floor(Math.random() * availableIndexes.length);
+            listo.push(availableIndexes[randomIndex]);
+            availableIndexes.splice(randomIndex, 1);
+        }
+
+        return listo;
+    }
+
+    function updateNavigationButtons() {
+        const btnPrev = document.getElementById('forrige-spørsmål'); // Replace with actual ID
+        const btnNext = document.getElementById('neste-spørsmål'); // Replace with actual ID
+        if (currentQuestion > 0) {
+            btnPrev.classList.remove('not-clickable');
+        } else {
+            btnPrev.classList.add('not-clickable');
+        }
+
+        if (currentQuestion < questionIndexList.length - 1) {
+            btnNext.classList.remove('not-clickable');
+        } else {
+            btnNext.classList.add('not-clickable');
+        }
+        /*
+        btnPrev.style.display = currentQuestion > 0 ? 'block' : 'none';
+        btnNext.style.display = currentQuestion < questionIndexList.length - 1 ? 'block' : 'none'; */
+
+        //Question buttons
+        // Question buttons
+        let indexelement;
+        let index = 0
+        questionElements.forEach(function(element) {
+            element.classList.remove("clicked");
+            if (index === currentQuestion) {
+                indexelement = element;
+            }
+            index ++
+        });
+
+        // Add the "clicked" class to the clicked element if it exists
+        if (indexelement) {
+            indexelement.classList.add("clicked");
+        }
+    }
+    function FindQuestionElements() {
+        // Get all the list elements
+        questionElements = document.querySelectorAll(".question-box-element");
+        var navarrowbuttons = document.querySelectorAll(".nav-spørsmål")
+
+        // Add a click event listener to each list element
+        questionElements.forEach(function(element) {
+            element.addEventListener("click", ClickButton);
+        });
+        navarrowbuttons.forEach(function(element) {
+            element.addEventListener("click", ClickButton);
+        });
+    }
+
+    function ClickButton(event) {
+
+        // Save the current answer if not undefined or null
+
+        // Retrieve the index from the button datakey
+        var index = parseFloat(event.target.getAttribute("datakey"));
+        var clickedElementId = event.target.id;
+        var increase = 1
+        if (clickedElementId === 'neste-spørsmål') {
+            // Previous button logic
+            currentQuestion = (currentQuestion + increase);
+        } else if (clickedElementId === 'forrige-spørsmål') {
+            // Next button logic
+            currentQuestion = (currentQuestion + (increase -1));
+            if (currentQuestion < 0)
+                currentQuestion = 0
+        } else {
+            // Specific question button logic
+            currentQuestion = parseInt(index);
+        }
+
+        // Update question and navigation buttons
+        loadQuestion();
+        updateNavigationButtons();
+    }
+
+    function getResults() {
+        visVindu()
+        let list = document.getElementById("results-list")
+        list.innerHTML = ""
+        questionIndexList.forEach((questionIndexXY, index) => {
+            /*
+            console.log(GetQuestion(questionIndexXY).question)
+            console.log(questionAnswersSave[index])*/
+            let questionobject = GetQuestion(questionIndexXY)
+            let question = questionobject.question
+            let answer = questionobject.answer
+            let youranswer = questionAnswersSave[index]
+            let youranswerhtmlClassValue
+            let youranswerhtmlText
+            if (youranswer === undefined) {
+                youranswerhtmlText = `Ikke besvart X`
+                youranswerhtmlClassValue = 'red'
+            } else {
+                youranswerhtmlText = `Ditt svar: ${youranswer}`
+                youranswerhtmlClassValue = ""
+            }
+            var element = `<div class="reveal-exam-card">
+                <p class="exam-card-question">Spørsmål: ${question}</p>
+                <p class="exam-card-answer">Svar: ${answer.svar}</p>
+                <p class="exam-card-youranswer ${youranswerhtmlClassValue}">${youranswerhtmlText}</p>
+                <button datakey="${index}" class="rett-button default">Rett</button>
+                <p class="rettet-text green" style="display: none">Du har rettet denne oppgaven! <span class="rettet-poeng">X poeng</span></p>
+            </div>`
+            list.innerHTML += element
+        })
+        list.querySelectorAll(".reveal-exam-card").forEach((card) => {
+            const button = card.querySelector(".rett-button");
+            if (button) { // Sjekk at knappen faktisk finnes før vi legger til en lytter
+                button.addEventListener('click', function () {
+                    RettOppgave(this);
+                });
+            }
+        });
+    }
+
+    function RettOppgave(element) {
+        // Finn datakey attributten fra knappen som kalte funksjonen
+        if (document.getElementById("finish-retting-button") !== null) {
+            return
+        }
+        let datakey = element.getAttribute('datakey');
+
+        // Fjern "Rett" knappen ved å fjerne event-listener og skjule den
+        element.style.display = 'none';
+
+        // Finn .reveal-exam-card-diven som knappen er en del av
+        let examCardDiv = element.closest('.reveal-exam-card');
+
+        // Legg til segmented-button div inn i .reveal-exam-card
+        examCardDiv.innerHTML += `
+        <div class="segmented-button" id="points-field">
+            <button class="left-button" onclick="GiPoeng(this, 1, ${datakey})">Gi poeng +1</button>
+            <button class="right-button" onclick="GiPoeng(this, 0, ${datakey})">Ikke gi poeng 0</button>
+        </div>
+    `;
+
+        // Legg til en ny knapp for å "Fullføre retting"
+        let finishButton = document.createElement('button');
+        finishButton.id = "finish-retting-button"
+        finishButton.classList.add("default")
+        finishButton.textContent = 'Fullfør retting';
+        finishButton.setAttribute('datakey', datakey);
+        finishButton.addEventListener('click', function() {
+            FullforRetting(this, examCardDiv);
+        });
+        examCardDiv.appendChild(finishButton);
+    }
+
+    // Eksempel på funksjoner som kalles når du gir poeng
+    function GiPoeng(button, poeng, datakey) {
+        pointsSave[datakey] = poeng;
+        var pointsField = button.closest("#points-field");
+        var leftButton = pointsField.querySelector(".left-button");
+        var rightButton = pointsField.querySelector(".right-button");
+        leftButton.classList.remove("green-bg", "red-bg");
+        rightButton.classList.remove("green-bg", "red-bg");
+        if (poeng > 0) {
+            leftButton.classList.add("green-bg");
+        } else {
+            rightButton.classList.add("red-bg");
+        }
+
+        CheckPoints();
+    }
+
+
+    function CheckPoints() {
+        let points = 0
+        let lengde = 0
+        pointsSave.forEach((point) => {
+            points += point
+            lengde++
+        })
+        document.getElementById("poeng-oppnåd").innerHTML = points
+        document.getElementById("rettet-antaller").innerHTML = lengde + " av " + maxPoints + " oppgaver"
+        const percentage = (points / maxPoints) * 100;
+
+        // Bestemmer karakter basert på oppnådd prosent
+        let grade;
+        if (percentage >= 90) {
+            grade = 'A';
+        } else if (percentage >= 75) {
+            grade = 'B';
+        } else if (percentage >= 60) {
+            grade = 'C';
+        } else if (percentage >= 50) {
+            grade = 'D';
+        } else if (percentage >= 40) {
+            grade = 'E';
+        } else {
+            grade = 'F';
+        }
+        document.getElementById("result-page-to").querySelector("h1").innerHTML = grade
+    }
+
+    // Eksempel på funksjonen for å fullføre rettingen
+    function FullforRetting(button, element) {
+        let datakey = button.getAttribute('datakey');
+        element.querySelector("#points-field").remove()
+        element.querySelector("#finish-retting-button").remove()
+        element.querySelector(".rett-button").style.display = 'block';
+        element.querySelector(".rett-button").addEventListener('click', function() {
+            RettOppgave(this);
+        });
+
+        if (pointsSave[datakey] !== undefined && pointsSave[datakey] !== null) {
+            let el = element.querySelector(".rettet-text")
+            el.style.display = "block";
+            if (pointsSave[datakey] === 1) {
+                el.querySelector(".rettet-poeng").innerHTML = "1 poeng";
+                el.querySelector(".rettet-poeng").classList.add("green")
+                el.querySelector(".rettet-poeng").classList.remove("red")
+            } else {
+                el.querySelector(".rettet-poeng").innerHTML = "0 poeng";
+                el.querySelector(".rettet-poeng").classList.remove("green")
+                el.querySelector(".rettet-poeng").classList.add("red")
+            }
+
+        }
+    }
+
+    function FerdigÅRette() {
+        document.getElementById("result-page-en").style.display = "none"
+        document.getElementById("result-page-to").style.display = "block"
+    }
+
+    function DisplayQuestion() {
+        document.getElementById("question-element").innerHTML = questionfromjson
+    }
+    function DisplayAnswer() {
+        document.getElementById("answer-element").innerHTML = answerfromjson
+    }
+
+</script>
+<style>
+    .reveal-exam-card {
+        border-radius: 15px; /* gir runde hjørner */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* gir en lett skygge */
+        background-color: white; /* setter hvit bakgrunn for hele kortet */
+        padding: 20px; /* gir litt plass inni kortet */
+        margin: 10px 0; /* gir litt plass rundt kortet */
+    }
+
+    .reveal-exam-card .exam-card-youranswer {
+        background-color: #f2f2f2; /* lysegrå bakgrunn for "youranswer" */
+        padding: 10px; /* gir litt plass inni */
+        border-radius: 10px; /* runde hjørner bare for "youranswer" */
+        margin-top: 10px; /* gir litt plass over "youranswer" */
+    }
+</style>

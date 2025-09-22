@@ -1,0 +1,23 @@
+Begreper
+Standarisering og felles metoder
+Styringsrammeverk = overordnet om kontroll, oversikt, vurderigner, dokumentasjon osv
+
+Tiltaksrammeverk = hvordan iverksette fysiske tiltak, opplæring, konfigurasjon osv…     (selv om mer konkret, så sjelden ned på "detaljnivå")
+
+Merk:  Ofte koster standardene vanvittig med penger. Likevel er det mer lønnsomt enn å finne opp hjulet selv…
+
+
+Cis Controls:
+CIS Controls (Critical Security Controls)
+Samling og systematisering av viktige fokusområder og tilhørende tiltak
+
+Cis Benchmark (En "konkretisering" av CIS Controls til hvert enkelt system/applikasjon
+): nivå ned fra CIS controls, Cis RAM (En metodikk for å gjøre vurderinger på status i din bedrift opp mot CIS Controls…
+): nivå opp.
+
+ISO: standardene
+ISO for dyrt, bedrifter og individer velger heller NIST fordi det er gratis, og mer IT rettet
+
+ISMS = Information secutrity management system
+
+Nist-standardene: National Institute of Standards and Technology

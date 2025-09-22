@@ -1,0 +1,1598 @@
+[
+  {
+    "question": "Hvorfor bruker vi semantiske tagger?",
+    "options": [
+      "Gjør innholdet lettere å lese / forstå for andre",
+      "Bedre tilgjengelighet for alle brukere, spesielt om du har unike behov",
+      "Mer konsistent",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hvilke av disse er ikke en semantisk tag?",
+    "options": [
+      "article",
+      "figure",
+      "div",
+      "footer"
+    ],
+    "answer": "div"
+  },
+  {
+    "question": "Header brukes primært til å",
+    "options": [
+      "Wrappe artikler",
+      "Wrappe main",
+      "Wrappe body",
+      "Wrappe nav"
+    ],
+    "answer": "Wrappe nav"
+  },
+  {
+    "question": "Kjennetegnet til main er",
+    "options": [
+      "Brukes til å 'wrappe' hovedinnholdet på siden",
+      "Brukes ikke til å 'wrappe' innhold som gjenbrukes på flere sider",
+      "Bruker kun en main-tag per side",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hvordan sikre at bilder har en fallback om de ikke laster / kan leses?",
+    "options": [
+      "Bruke en footer til å forklare",
+      "Omfavne bildet i en main tag",
+      "Bruke alternative tekst og i enkelte tilfeller fig-caption",
+      "Bruke src-set attributten"
+    ],
+    "answer": "Bruke alternative tekst og i enkelte tilfeller fig-caption"
+  },
+  {
+    "question": "Hva brukes metatagger til?",
+    "options": [
+      "Til å bedre annonsere på Google",
+      "Til å bedre tolke innholdet, vise tittelen på siden i nettleservinduet, vise favicon m.m",
+      "For å vise innholdet på en nettside",
+      "Den gjør ikke noe spesielt"
+    ],
+    "answer": "Til å bedre tolke innholdet, vise tittelen på siden i nettleservinduet, vise favicon m.m"
+  },
+  {
+    "question": "Hva mangler taggen? <input name='age' placeholder='Your age' />",
+    "options": [
+      "Den mangler required",
+      "Den mangler type='number'",
+      "Den mangler id",
+      "Den mangler for"
+    ],
+    "answer": "Den mangler type='number'"
+  },
+  {
+    "question": "Label knyttes sammen med inputfelt via",
+    "options": [
+      "Navnet på IDen",
+      "Navnet på klassen",
+      "Navnet på placeholder",
+      "Type inputfelt"
+    ],
+    "answer": "Navnet på IDen"
+  },
+  {
+    "question": "Hva må til for at box-modellen skal gjelde?",
+    "options": [
+      "Elementet må ha posisjon relative",
+      "Elementet må ha z-index",
+      "Elementet må være et blockelement (inline-block, block, flex, grid)",
+      "Elementet må ha opacity 45%"
+    ],
+    "answer": "Elementet må være et blockelement (inline-block, block, flex, grid)"
+  },
+  {
+    "question": "Hva brukes box-sizing til?",
+    "options": [
+      "Til å gi størrelse på et element",
+      "Til å få det til å ligne på en box",
+      "Til å plassere det nede til høyre på skjermen",
+      "Til å tvinge innholdet i boksen innover slik at bredden ikke overskrides"
+    ],
+    "answer": "Til å tvinge innholdet i boksen innover slik at bredden ikke overskrides"
+  },
+  {
+    "question": "Hvilke muligheter har vi for å posisjonere elementer med CSS?",
+    "options": [
+      "Absolute, static, sticky, relative og fixed",
+      "Outside, before, after og below",
+      "Around, under and top",
+      "display: block"
+    ],
+    "answer": "Absolute, static, sticky, relative og fixed"
+  },
+  {
+    "question": "Hva kjennetegner absolute posisjonering?",
+    "options": [
+      "Brukes når vi vil forholde oss til våre omgivelser",
+      "Brukes når vi vil forholde oss til nærmeste parent med position: relative",
+      "Brukes når vi kun vil forholde oss til selve skjermvinduet",
+      "Brukes når vi vil forholde oss til scroll i Y-aksen"
+    ],
+    "answer": "Brukes når vi vil forholde oss til nærmeste parent med position: relative"
+  },
+  {
+    "question": "Hva kjennetegner fixed posisjonering?",
+    "options": [
+      "Brukes når vi vil forholde oss til våre omgivelser",
+      "Brukes når vi vil forholde oss til nærmeste parent",
+      "Brukes når vi kun vil forholde oss til selve skjermvinduet",
+      "Brukes når vi vil forholde oss til scroll i Y-aksen"
+    ],
+    "answer": "Brukes når vi kun vil forholde oss til selve skjermvinduet"
+  },
+  {
+    "question": "Hva kjennetegner relative posisjonering?",
+    "options": [
+      "Brukes når vi vil forholde oss til våre omgivelser",
+      "Brukes når vi vil forholde oss til nærmeste parent",
+      "Brukes når vi kun vil forholde oss til selve skjermvinduet",
+      "Brukes når vi vil forholde oss til scroll i Y-aksen"
+    ],
+    "answer": "Brukes når vi vil forholde oss til våre omgivelser"
+  },
+  {
+    "question": "Hva brukes z-index til?",
+    "options": [
+      "Til å si noe om hva som skal vises 'nærmest' oss",
+      "Til å flytte et element sidelengs",
+      "Til å flytte et element oppover",
+      "Til å posisjonere det absolute"
+    ],
+    "answer": "Til å si noe om hva som skal vises 'nærmest' oss"
+  },
+  {
+    "question": "Hva kan vi bruke pseudo selectorer til?",
+    "options": [
+      "Hente ut et element basert på formen det har",
+      "Hente ut et element basert på rekkefølgen, typen eller 'staten' den har",
+      "Hente ut et element basert på z-index",
+      "Hente ut et element basert på klassen eller id-en den har"
+    ],
+    "answer": "Hente ut et element basert på rekkefølgen, typen eller 'staten' den har"
+  },
+  {
+    "question": "*= er en attributt selector og brukes til å hente elementer som",
+    "options": [
+      "Inneholder et ord",
+      "Starter med et ord",
+      "Slutter med et ord",
+      "Er tomme"
+    ],
+    "answer": "Inneholder et ord"
+  },
+  {
+    "question": "Hva brukes flexbox til?",
+    "options": [
+      "Til å absolutt posisjonere elementer",
+      "Til å lage 3x3 grids",
+      "Til å plassere elementer i en dimensjon (horisontalt eller vertikalt)",
+      "Til å gi elementer en bøy"
+    ],
+    "answer": "Til å plassere elementer i en dimensjon (horisontalt eller vertikalt)"
+  },
+  {
+    "question": "Hva bruks grid til?",
+    "options": [
+      "Til å lage 3x3 grid",
+      "Plassering av elementer horisontalt",
+      "Plassering av elementer vertikalt",
+      "Plassering av elementer både vertikalt og horisontalt"
+    ],
+    "answer": "Plassering av elementer både vertikalt og horisontalt"
+  },
+  {
+    "question": "Hva gjør denne 'transition: width 3s ease-in;'",
+    "options": [
+      "Styrer overgangen mellom høyden og bredden på et element",
+      "Styrer hvordan endring i bredden skal oppføre seg",
+      "Styrer hvor mange sekunder det skal ta før overgangen skal starte",
+      "Gjør at overgangen har lik hastighet hele tiden"
+    ],
+    "answer": "Styrer hvordan endring i bredden skal oppføre seg"
+  },
+  {
+    "question": "Hvis jeg vil croppe et bilde som er større enn boksen / rammen rundt, hvilken av disse er riktig",
+    "options": [
+      "object-fit: crop;",
+      "object-fit: contain;",
+      "object-fit: cover;",
+      "object-fit: keep-ratio;"
+    ],
+    "answer": "object-fit: cover;"
+  },
+  {
+    "question": "Hvor bør vi som utviklere søke etter hjelp om vi står helt fast?",
+    "options": [
+      "Google, Github, Stack Overflow, Youtube, en annen utvikler",
+      "Jeg står aldri helt fast",
+      "Jeg gir opp når jeg ikke vet svaret med en gang",
+      "Jeg søker ikke hjelp, hjelpen må komme til meg",
+      "en annen utvikler"
+    ],
+    "answer": "Google, Github, Stack Overflow, Youtube, en annen utvikler"
+  },
+  {
+    "question": "Hvordan lages en variabel?",
+    "options": [
+      "let x = ''",
+      "var x = ''",
+      "const x = ''",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hvorfor bruke let og const istedenfor var?",
+    "options": [
+      "Bedre hjelp fra VS Code",
+      "Mer sikkert",
+      "block scope",
+      "var er bedre"
+    ],
+    "answer": "block scope"
+  },
+  {
+    "question": "Hvilken av disse bør vi bruke for å lage alderen til en bruker?",
+    "options": [
+      "const a = 24",
+      "var age = 24",
+      "const userAge = 24",
+      "const userage = 24",
+      "const brukerenSinAlder = 24"
+    ],
+    "answer": "const userAge = 24"
+  },
+  {
+    "question": "Hva returneres om en verdi ikke eksisterer?",
+    "options": [
+      "undefined eller null",
+      "Boolean",
+      "Number",
+      "This does not exist"
+    ],
+    "answer": "undefined eller null"
+  },
+  {
+    "question": "Hvordan lage en streng som går over flere linjer?",
+    "options": [
+      "Ved hjelp av backtics ``",
+      "Ved hjelp av string + linjeskift + string"
+    ],
+    "answer": "Ved hjelp av backtics ``"
+  },
+  {
+    "question": "Hvilke av disse er foretrukket måte å sjekke om to variabler er like?",
+    "options": [
+      "==",
+      "===",
+      ">=",
+      "=>",
+      "Eller, og, ikke"
+    ],
+    "answer": "==="
+  },
+  {
+    "question": "Hva betyr disse tre? ||, &&, !",
+    "options": [
+      "Eller, større enn, ikke",
+      "Nei, ja, vet ikke",
+      "Eller, og, ikke"
+    ],
+    "answer": "Eller, og, ikke"
+  },
+  {
+    "question": "Ternary operators har hvilken form?",
+    "options": [
+      "let result = betingelse ? verdi hvis sann : verdi ellers;",
+      "let result = betingelse ? verdi hvis feil : verdi ellers;",
+      "let result = betingelse ? verdi",
+      "let result = verdi ? betingelse 1 : betingelse to;"
+    ],
+    "answer": "let result = betingelse ? verdi hvis sann : verdi ellers;"
+  },
+  {
+    "question": "Arrays (lister) har disse kjennetegnene",
+    "options": [
+      "Bruker [], har en .length og starter med index 1",
+      "Bruker [], har en .length og starter med index 0",
+      "Bruker {}, har en .length og starter med index 0",
+      "Bruker {}, har ikke en .length og starter med index 0"
+    ],
+    "answer": "Bruker [], har en .length og starter med index 0"
+  },
+  {
+    "question": "Objekter (lister) har disse kjennetegnene",
+    "options": [
+      "Bruker {}, har ikke .length og består av nøkkel/verdi (key/value-par)",
+      "Bruker [], har en .length og starter med index 0",
+      "Bruker {}, har en .length og starter med index 0",
+      "Bruker {}, har ikke en .length og starter med index 0"
+    ],
+    "answer": "Bruker {}, har ikke .length og består av nøkkel/verdi (key/value-par)"
+  },
+  {
+    "question": "Filter og map endrer den originale arrayen?",
+    "options": [
+      "Nei, de lager en ny array med de endringene du har lagt til",
+      "Nei, de returnerer alltid den samme listen",
+      "Ja, de endrer originalen",
+      "Filter og map kan ikke brukes på arrays"
+    ],
+    "answer": "Nei, de lager en ny array med de endringene du har lagt til"
+  },
+  {
+    "question": "isStudent kan brukes hvor som helst? const studentCheck = () => { const isStudent = true}",
+    "options": [
+      "Ja, den er global",
+      "Nei, den er scopet til funksjonen",
+      "Nei, den er const og kan ikke endres",
+      "Ja, funksjonen har ikke noe å si"
+    ],
+    "answer": "Nei, den er scopet til funksjonen"
+  },
+  {
+    "question": "event.currentTarget brukes til å?",
+    "options": [
+      "Hindre at default event inntreffer",
+      "Hente ut en variabel som heter currentTarget",
+      "Skrive ut noe i consolen",
+      "Hente ut det elementet som har event listener på seg"
+    ],
+    "answer": "Hente ut det elementet som har event listener på seg"
+  },
+  {
+    "question": "event.preventDefault() brukes til å",
+    "options": [
+      "Trigge normal adferd f.eks når vi sender inn et skjema",
+      "Gjør ingen ting, det er en lurefunksjon",
+      "Forhindre normal adferd f.eks når vi sender inn et skjema",
+      "Gi eventet en default adferd du har definert"
+    ],
+    "answer": "Forhindre normal adferd f.eks når vi sender inn et skjema"
+  },
+  {
+    "question": "For å hente alle nodene av en gitt type bruker vi?",
+    "options": [
+      "document.querySelector('all')",
+      "elements.querySelectorAll('li')",
+      "document.getAllById('li')",
+      "document.querySelectorAll('li')"
+    ],
+    "answer": "document.querySelectorAll('li')"
+  },
+  {
+    "question": "Hva brukes git til?",
+    "options": [
+      "Versjonskontroll, samarbeid og CI",
+      "Kode JavaScript applikasjoner",
+      "Til å delegere oppgaver",
+      "Autentisering og autorisering"
+    ],
+    "answer": "Versjonskontroll, samarbeid og CI"
+  },
+  {
+    "question": "Hva er et repository?",
+    "options": [
+      "En JavaScript fil",
+      "Et ord for agil utvikling",
+      "Stedet hvor vi sender / henter filer når vi bruker git"
+    ],
+    "answer": "Stedet hvor vi sender / henter filer når vi bruker git"
+  },
+  {
+    "question": "Hva oppnår vi ved branching?",
+    "options": [
+      "Vi øker sjansene for merge-conflicts",
+      "Vi gjør det for å holde vår egen kode hemmelig",
+      "Vi merger koden vår med andre sin kode",
+      "Vi gjør det for å unngå at vårt og andres kode blir påvirket mens vi utvikler vår del av koden"
+    ],
+    "answer": "Vi gjør det for å unngå at vårt og andres kode blir påvirket mens vi utvikler vår del av koden"
+  },
+  {
+    "question": "Code reviews gjøres for å",
+    "options": [
+      "Gi økt kunnskap om kodebasen",
+      "Redusere antall bugs",
+      "Læring",
+      "Øke kodekvaliteten",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hva menes med pull requests?",
+    "options": [
+      "At vi forespør om vår kode kan flettes med en gitt gren",
+      "At vi sender koden vår fra vår lokale maskin til en gren",
+      "At vi kloner et repository",
+      "At vi merger to brancher (grener)"
+    ],
+    "answer": "At vi forespør om vår kode kan flettes med en gitt gren"
+  },
+  {
+    "question": "Hvilke steg må vi ta for å få sendt koden vår til f.eks GitHub?",
+    "options": [
+      "git add . && git commit -m 'kommentar' && git push",
+      "git push && git pull",
+      "git pull && git push",
+      "git merge dev && git push"
+    ],
+    "answer": "git add . && git commit -m 'kommentar' && git push"
+  },
+  {
+    "question": "Hvordan lager vi ny branch?",
+    "options": [
+      "git new branch navn",
+      "git pull branch navn",
+      "git checkout -b navn",
+      "git create branch navn"
+    ],
+    "answer": "git checkout -b navn"
+  },
+  {
+    "question": "Hva brukes .gitignore til?",
+    "options": [
+      "Skjule alle filene i prosjektet vårt",
+      "For å laste opp node_modules",
+      "For å forhindre at noen misbruker prosjektet vårt",
+      "For å forhindre at valgte mapper eller filer blir lastet opp til f.eks GitHub"
+    ],
+    "answer": "For å forhindre at valgte mapper eller filer blir lastet opp til f.eks GitHub"
+  },
+  {
+    "question": "Hva er det første vi må gjøre når vi åpner et prosjekt etter litt tid?",
+    "options": [
+      "Hente ned siste endringer med git pull",
+      "Hente ned siste endringer med git merge",
+      "Laste opp siste endringer med git push",
+      "Lage en ny branch med git checkout -b"
+    ],
+    "answer": "Hente ned siste endringer med git pull"
+  },
+  {
+    "question": "Hva er en merge konflikt?",
+    "options": [
+      "En konflikt mellom to utviklere",
+      "En feil med JavaScript koden vår",
+      "En konflikt mellom koden vår og koden vi ønsker å flette sammen med vår kode",
+      "En konflikt fordi to grener har samme navn"
+    ],
+    "answer": "En konflikt mellom koden vår og koden vi ønsker å flette sammen med vår kode"
+  },
+  {
+    "question": "Hvilken versjon er riktig for JavaScript?",
+    "options": [
+      "EX2021",
+      "EN2021",
+      "ES2021",
+      "EF2021"
+    ],
+    "answer": "ES2021"
+  },
+  {
+    "question": "Hva menes med block scope?",
+    "options": [
+      "At funksjonen blokkeres av en annen funksjon",
+      "At verdiene er globale",
+      "At verdiene er i et badekar",
+      "At verdiene ikke er tilgjengelig utenfor sin blokk {}"
+    ],
+    "answer": "At verdiene ikke er tilgjengelig utenfor sin blokk {}"
+  },
+  {
+    "question": "Hvilke(n) av disse er riktig bruk av arrow funksjoner?",
+    "options": [
+      "const simpleOperation = (x) => x * x;",
+      "const simpleOperation2 = x => x * x;",
+      "const implisittReturn = () => 'EcmaScript';",
+      "const multipleParams = (x, y) => x * y;",
+      "Alle er riktig"
+    ],
+    "answer": "Alle er riktig"
+  },
+  {
+    "question": "Hva returneres her => const age = 22; age > 20 && console.log(age)",
+    "options": [
+      "22",
+      "false",
+      "true",
+      "error"
+    ],
+    "answer": "22"
+  },
+  {
+    "question": "Hva skrives ut her => const age = 20; age > 22 || console.log('Less than 22')",
+    "options": [
+      "false",
+      "true",
+      "Less than 22",
+      "undefined"
+    ],
+    "answer": "Less than 22"
+  },
+  {
+    "question": "Hva brukes ?? til?",
+    "options": [
+      "Sjekke om en verdi er et tall",
+      "Sjekke om en verdi er en string",
+      "Sjekke om en verdi er true",
+      "Sjekke om en verdi er null eller undefined"
+    ],
+    "answer": "Sjekke om en verdi er null eller undefined"
+  },
+  {
+    "question": "Hvordan kan vi sjekke om en verdi finnes i et objekt?",
+    "options": [
+      "Optional Chaining - value?.",
+      "Nullish coalescing ??",
+      "Logical Operators &&",
+      "Det går ikke"
+    ],
+    "answer": "Optional Chaining - value?."
+  },
+  {
+    "question": "Kan vi bruke variabler direkte i objekter?",
+    "options": [
+      "Ja, det er et eks på object shorthand",
+      "Nei, vi må definere key/value"
+    ],
+    "answer": "Ja, det er et eks på object shorthand"
+  },
+  {
+    "question": "Hvordan bruker vi dynamiske variabler i backticks ``",
+    "options": [
+      "+",
+      "-",
+      "${}",
+      "{}"
+    ],
+    "answer": "${}"
+  },
+  {
+    "question": "Hva kjennetegner for-of?",
+    "options": [
+      "For-of gir oss tilgang til indexene i listen",
+      "For-of gir oss tilgang til verdiene i listen",
+      "For-of gir oss tilgang til nøkkelen i objektet",
+      "For-of gir oss tilgang til verdien i objektet"
+    ],
+    "answer": "For-of gir oss tilgang til verdiene i listen"
+  },
+  {
+    "question": "array.map() brukes primært til å:",
+    "options": [
+      "Hente ut et utvalg fra en liste",
+      "Aggregere data i en liste",
+      "Gjøre endringer på verdiene i en liste",
+      "Hente ut indexen til en liste"
+    ],
+    "answer": "Gjøre endringer på verdiene i en liste"
+  },
+  {
+    "question": "Hva kan vi bruke spread (...) til?",
+    "options": [
+      "Slå sammen lister",
+      "Slå sammen objekter",
+      "Kopiere lister",
+      "Gjøre om strenger til lister",
+      "Utvide objekter",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hva skiller object og list destructuring?",
+    "options": [
+      "List er IKKE tro mot posisjonen",
+      "Det er ingen forskjell",
+      "List er tro mot posisjonen, objekt er tro mot navnet på nøkkelen"
+    ],
+    "answer": "List er tro mot posisjonen, objekt er tro mot navnet på nøkkelen"
+  },
+  {
+    "question": "Hva blir resultatet? const obj = {a:1, b:1, c:1}; const { a, ...leftOvers } = obj\nconsole.log(a, leftOvers);",
+    "options": [
+      "1, 2, 3",
+      "1, 2, 3",
+      "1, {b: 1}, {c: 1}",
+      "1, {b: 1, c: 1}"
+    ],
+    "answer": "1, {b: 1, c: 1}"
+  },
+  {
+    "question": "Hva skiller find og findIndex?",
+    "options": [
+      "Find gir oss første verdi vi leter etter eller null. FindIndex gir oss boolean",
+      "Find gir oss første verdi vi leter etter eller null/undefined. FindIndex gir oss første index eller -1",
+      "Det er ingen forskjell",
+      "Find gir oss indexen. FindIndex gir oss selve verdien"
+    ],
+    "answer": "Find gir oss første verdi vi leter etter eller null/undefined. FindIndex gir oss første index eller -1"
+  },
+  {
+    "question": "Hva skiller default og named export?",
+    "options": [
+      "Det er ingen forskjell",
+      "default export krever at vi bruker 'navnet' på det vi eksporterte når vi importerer",
+      "named export krever at vi bruker 'navnet' på det vi eksporterte når vi importerer"
+    ],
+    "answer": "named export krever at vi bruker 'navnet' på det vi eksporterte når vi importerer"
+  },
+  {
+    "question": "Hva gjør debugger; ?",
+    "options": [
+      "Stopper koden der debugger er slik at vi kan inspisere koden",
+      "Den gir oss en stacktrace som forklarer feilen som oppstod",
+      "Den console-logger ut verdien vår",
+      "Den sender en melding til en tjeneste for å logge feilen"
+    ],
+    "answer": "Stopper koden der debugger er slik at vi kan inspisere koden"
+  },
+  {
+    "question": "Hva menes med Bash?",
+    "options": [
+      "Det er et navn for terminalen, consolen, kommandolinja",
+      "Det er en modul i JavaScript",
+      "Det er en CSS selector",
+      "Det er en tag i HTML"
+    ],
+    "answer": "Det er et navn for terminalen, consolen, kommandolinja"
+  },
+  {
+    "question": "Hva menes med kommandoen cd kat og cd ..?",
+    "options": [
+      "cd kat betyr slett katalogen 'kat'",
+      "cd er forgjengeren til DVD og brukes til å spille musikk",
+      "cd .. betyr opp et nivå. cd kat betyr gå til katalogen 'kat'",
+      "cd .. vil si å lage en ny katalog"
+    ],
+    "answer": "cd .. betyr opp et nivå. cd kat betyr gå til katalogen 'kat'"
+  },
+  {
+    "question": "Hva brukes yarn og npm til?",
+    "options": [
+      "Oppgradere VSCode",
+      "Installere Node på maskinen",
+      "Laste opp kode til GitHub",
+      "Verktøyene vi bruker for å installere pakker, oppdatere pakker, fjerne pakker m.m."
+    ],
+    "answer": "Verktøyene vi bruker for å installere pakker, oppdatere pakker, fjerne pakker m.m."
+  },
+  {
+    "question": "Hva menes med en major versjon?",
+    "options": [
+      "Det vil si den siste nye versjonen",
+      "Det vil si siste versjon av Yarn eller NPM",
+      "Det vil si det første nummeret i versjonen av pakken vi bruker (eks 1 i versjon 1.2.3)",
+      "Major er siste versjon av Next.js"
+    ],
+    "answer": "Det vil si det første nummeret i versjonen av pakken vi bruker (eks 1 i versjon 1.2.3)"
+  },
+  {
+    "question": "Hva brukes 'scripts' i package.json til?",
+    "options": [
+      "scripts viser hvilke kommandoer vi kan kjøre i terminalen vår. F.eks teste prosjektet",
+      "scripts brukes til å kjøre bash scripts i prosjektet vårt",
+      "scripts kjøres med 'yarn navnPåScript'",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hvilken av kommandoene brukes til å installere en pakke?",
+    "options": [
+      "yarn add / npm install",
+      "yarn remove / npm uninstall",
+      "yarn init –y / npm init -y",
+      "yarn upgrade-interactive --latest"
+    ],
+    "answer": "yarn add / npm install"
+  },
+  {
+    "question": "Hva brukes eslint og prettier til?",
+    "options": [
+      "Formatere og sikre at koden følger en viss standard ut fra et sett av regler",
+      "Konsistent formatering av kode i teamet",
+      "Forebygge at koden inneholder syntaxfeil eller bryter med gode konvensjoner",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hva er brukes Parcel, Webpack o.l til?",
+    "options": [
+      "Håndtere Git",
+      "Sikre at koden holder en gitt standard",
+      "Klargjøre koden til produksjon, gjøre utviklingen mer effektiv og automatisere prosesser som optimaliserer koden",
+      "Installere pakker i Node"
+    ],
+    "answer": "Klargjøre koden til produksjon, gjøre utviklingen mer effektiv og automatisere prosesser som optimaliserer koden"
+  },
+  {
+    "question": "Hva kan vi bruke Network tabben i Chrome til?",
+    "options": [
+      "Teste hvordan nettsiden vår presterer",
+      "Se hva som har blitt 'lagret' i nettleseren",
+      "Undersøke og modifisere CSS og HTML",
+      "Undersøke nettverkstrafikken og derav request, response og headers"
+    ],
+    "answer": "Undersøke nettverkstrafikken og derav request, response og headers"
+  },
+  {
+    "question": "Hva menes med Singel Page Applications?",
+    "options": [
+      "Løsningen krever lager ferdig HTML på serveren",
+      "Løsningen består kun av en HTML-side med statisk tekst",
+      "Løsningen bruker JavaScript til å bytte ut innholdet og AJAX til å hente innhold via f.eks API",
+      "Løsningen er singel vs in a relationship"
+    ],
+    "answer": "Løsningen bruker JavaScript til å bytte ut innholdet og AJAX til å hente innhold via f.eks API"
+  },
+  {
+    "question": "Hva er React?",
+    "options": [
+      "React er et bibliotek brukt til å lage frontend-applikasjoner?",
+      "React er et rammeverk brukt til å lage frontend-applikasjoner?",
+      "React er et bibliotek brukt til å lage backend-applikasjoner?",
+      "React er et rammeverk brukt til å lage backend-applikasjoner?"
+    ],
+    "answer": "React er et bibliotek brukt til å lage frontend-applikasjoner?"
+  },
+  {
+    "question": "Hva er JSX?",
+    "options": [
+      "JavaScript som minner om vanlig HTML, men hvor vi skriver JavaScript og HTML om hverandre",
+      "HTML5 standard",
+      "CSS3 standard",
+      "Det er det samme som TypeScript"
+    ],
+    "answer": "JavaScript som minner om vanlig HTML, men hvor vi skriver JavaScript og HTML om hverandre"
+  },
+  {
+    "question": "Hvorfor bruker vi komponenter?",
+    "options": [
+      "DRY (Do Not Repeat Yourselves ⇒ gjenbruk av kode)",
+      "Mindre kode på et sted = Økt lesbarhet",
+      "Dynamisk import som gir raskere lastetid",
+      "Bedre strukturering av koden",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hva skiller 'stateless' og 'statefull' komponent?",
+    "options": [
+      "Statefull brukes kun til å skrive ut innhold. Har ikke noe logikk.",
+      "Stateless bruker state og eksterne metoder til å skrive ut innhold.",
+      "Statefull håndterer sin egen state, bruker props og eksterne metoder til å skrive ut innhold.",
+      "Det er ingen forskjell"
+    ],
+    "answer": "Statefull håndterer sin egen state, bruker props og eksterne metoder til å skrive ut innhold."
+  },
+  {
+    "question": "Hva brukes React Fragment til?",
+    "options": [
+      "Dele opp koden vår i ulike komponenter",
+      "Skrive ut lister i JSX",
+      "Style komponentene våre",
+      "Gruppere tagger som ikke har noen parent med (<></>)"
+    ],
+    "answer": "Gruppere tagger som ikke har noen parent med (<></>)"
+  },
+  {
+    "question": "Hva brukes props til i React?",
+    "options": [
+      "Til å sende informasjon fra en child til en parent komponent",
+      "Til å kommunisere mellom to søsken-komponenter",
+      "Til å kommunisere mellom parent-child komponenter",
+      "Til å style en React komponent"
+    ],
+    "answer": "Til å kommunisere mellom parent-child komponenter"
+  },
+  {
+    "question": "Hva er riktig bruk av props?",
+    "options": [
+      "<Component value={[{id: 1, name: 'Marius' },{ id: 2, name: 'Hans' }]} />",
+      "<Component value={()⇒{console.log('test'}} />",
+      "<Component value={'string'} />",
+      "<Component value={2} />",
+      "Alle er riktig"
+    ],
+    "answer": "Alle er riktig"
+  },
+  {
+    "question": "Kan man deconstructe props i React?",
+    "options": [
+      "Ja",
+      "Nei"
+    ],
+    "answer": "Ja"
+  },
+  {
+    "question": "Hvilken av disse er riktig måte å lage et event i React?",
+    "options": [
+      "onClick",
+      "onclick",
+      "click",
+      "clicked"
+    ],
+    "answer": "onClick"
+  },
+  {
+    "question": "Hvordan sjekker vi conditionals i React JSX?",
+    "options": [
+      "if",
+      "switch",
+      "try/catch",
+      "ternary operators and logical operators"
+    ],
+    "answer": "ternary operators and logical operators"
+  },
+  {
+    "question": "Hvordan henter vi verdiene i en liste i JSX?",
+    "options": [
+      "array.map()",
+      "for-of",
+      "for-in",
+      "for",
+      "while"
+    ],
+    "answer": "array.map()"
+  },
+  {
+    "question": "Hva kjennetegner et hook?",
+    "options": [
+      "Brukes i funksjonell React",
+      "Gir oss hjelpeverktøy til å kontrollere blant annet state",
+      "Starter med use",
+      "Må alltid være i toppen av en komponent",
+      "Kan lage egne hooks",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hva menes med state?",
+    "options": [
+      "Statusen til en komponent",
+      "Versjonen av React vi bruker",
+      "Mellomlagring av verdier som gjør det enklere å skrive moderne applikasjoner. Truck og lager.",
+      "Verdiene vi får når vi skal sende et skjema via onSubmit"
+    ],
+    "answer": "Mellomlagring av verdier som gjør det enklere å skrive moderne applikasjoner. Truck og lager."
+  },
+  {
+    "question": "Hvordan håndterer vi state i React?",
+    "options": [
+      "const [setValue] = useState('Initial Value')",
+      "const [value] = useState('Initial Value')",
+      "const [value, setValue] = useHook('Initial Value')",
+      "const [value, setValue] = useState('Initial Value')"
+    ],
+    "answer": "const [value, setValue] = useState('Initial Value')"
+  },
+  {
+    "question": "Hvordan gjør vi en input controlled i React?",
+    "options": [
+      "<input defaultValue={value} onChange={handleChange} />",
+      "<input value={value} onChange={handleChange} />",
+      "<input defaultValue={value} autofocus onChange={handleChange} />",
+      "<input type='text' defaultValue={value} onChange={handleChange} />"
+    ],
+    "answer": "<input value={value} onChange={handleChange} />"
+  },
+  {
+    "question": "Hvordan får vi tak i 'gammel' state når vi skal oppdatere f.eks et objekt?",
+    "options": [
+      "setSelected((prevState) => ({...prevState, ...newValue}))",
+      "setSelected(prevState)",
+      "setPrevState(newValue)",
+      "setPrevState(prevState)"
+    ],
+    "answer": "setSelected((prevState) => ({...prevState, ...newValue}))"
+  },
+  {
+    "question": "Hva menes med å 'løfte' state?",
+    "options": [
+      "Vi flytter state fra parent til child-komponent",
+      "Vi flytter state mellom to søsken-komponenter",
+      "Vi lagrer staten høyt oppe i komponenten",
+      "Vi flytter state fra child til parent-komponent"
+    ],
+    "answer": "Vi flytter state fra child til parent-komponent"
+  },
+  {
+    "question": "Hvorfor må vi av og til løfte state?",
+    "options": [
+      "For å dele state mellom søsken komponenter",
+      "For å unngå at en komponent blir 'nullet' ut når vi trigger endringer i state på en parent",
+      "For å 'fordumme' en komponent slik at den enklere kan gjenbrukes",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hva er noen av fordelene med refactoring?",
+    "options": [
+      "Bryter ned kompleks kode til mindre deler",
+      "Lager gjenbrukbar kode",
+      "Lettere å lese og forstå koden",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hvilke av disse filene skal ikke commites til GitHub?",
+    "options": [
+      "index.js",
+      "package.json",
+      ".env",
+      ".editorconfig"
+    ],
+    "answer": ".env"
+  },
+  {
+    "question": "Hva er fordelene av å bruke Create React App?",
+    "options": [
+      "Profesjonell mal vi kan bruke",
+      "Velprøvd og testet",
+      "Raskere å komme i gang",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hva er ulempene av å bruke Create React App?",
+    "options": [
+      "Mindre kontroll",
+      "Vanskeligere å overstyre",
+      "Mye 'magi' vi ikke har et forhold til",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hvorfor bruker vi komponenter?",
+    "options": [
+      "DRY (Do Not Repeat Yourselves ⇒ gjenbruk av kode)",
+      "Mindre kode på et sted = Økt lesbarhet",
+      "Dynamisk import som gir raskere lastetid",
+      "Bedre strukturering av koden",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hva skiller 'stateless' og 'statefull' komponent?",
+    "options": [
+      "Statefull brukes kun til å skrive ut innhold. Har ikke noe logikk.",
+      "Stateless bruker state og eksterne metoder til å skrive ut innhold.",
+      "Statefull håndterer sin egen state, bruker props og eksterne metoder til å skrive ut innhold.",
+      "Det er ingen forskjell"
+    ],
+    "answer": "Statefull håndterer sin egen state, bruker props og eksterne metoder til å skrive ut innhold."
+  },
+  {
+    "question": "Hva brukes props til i React?",
+    "options": [
+      "Til å sende informasjon fra en child til en parent komponent",
+      "Til å kommunisere mellom to søsken-komponenter",
+      "Til å kommunisere mellom parent-child komponenter",
+      "Til å style en React komponent"
+    ],
+    "answer": "Til å kommunisere mellom parent-child komponenter"
+  },
+  {
+    "question": "Hvordan sjekker vi conditionals i React JSX?",
+    "options": [
+      "if",
+      "switch",
+      "try/catch",
+      "ternary operators and logical operators"
+    ],
+    "answer": "ternary operators and logical operators"
+  },
+  {
+    "question": "Hvordan håndterer vi state i React?",
+    "options": [
+      "const [setValue] = useState('Initial Value')",
+      "const [value] = useState('Initial Value')",
+      "const [value, setValue] = useHook('Initial Value')",
+      "const [value, setValue] = useState('Initial Value')"
+    ],
+    "answer": "const [value, setValue] = useState('Initial Value')"
+  },
+  {
+    "question": "Hva menes med å 'løfte' state?",
+    "options": [
+      "Vi flytter state fra parent til child-komponent",
+      "Vi flytter state mellom to søsken-komponenter",
+      "Vi lagrer staten høyt oppe i komponenten",
+      "Vi flytter state fra child til parent-komponent"
+    ],
+    "answer": "Vi flytter state fra child til parent-komponent"
+  },
+  {
+    "question": "Hvorfor må vi av og til løfte state?",
+    "options": [
+      "For å dele state mellom søsken komponenter",
+      "For å unngå at en komponent blir 'nullet' ut når vi trigger endringer i state på en parent",
+      "For å 'fordumme' en komponent slik at den enklere kan gjenbrukes",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hviken av disse er feil påstand om hvorfor vi skriver tester?",
+    "options": [
+      "Lettere stole på koden vår (trygghet)",
+      "Bedre kontroll / mer bevisst når vi lager logikk",
+      "Gi en form for dokumentasjon andre utviklere kan lese",
+      "Øke kvaliteten på koden vi skriver",
+      "Redusert effektivitet"
+    ],
+    "answer": "Redusert effektivitet"
+  },
+  {
+    "question": "Hva slags tester har vi?",
+    "options": [
+      "Enhetstester",
+      "Integrasjonstester",
+      "Ende til ende tester",
+      "Alle de nevnte",
+      "Ingen av de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hvilken av disse kan vi ikke bruke for å asserte at noe er riktig?",
+    "options": [
+      "toEqual",
+      "toBeTruthy",
+      "toHaveLength",
+      "toAppearIn"
+    ],
+    "answer": "toAppearIn"
+  },
+  {
+    "question": "Hva må stå i render() for at vi skal teste en komponent fra Product.jsx",
+    "options": [
+      "Product",
+      "<Product />",
+      "ProductList",
+      "<Product></Product>"
+    ],
+    "answer": "<Product />"
+  },
+  {
+    "question": "Hvilken testdekning skal man ha?",
+    "options": [
+      "Så høy som mulig gitt at kvaliteten på testene er gode",
+      "100%",
+      "Testdekning er ikke relevant",
+      "Alt over 75% anses som god dekning"
+    ],
+    "answer": "Så høy som mulig gitt at kvaliteten på testene er gode"
+  },
+  {
+    "question": "Hvilken av disse funksjonene er riktig når vi skal sjekke at testen 'virker'",
+    "options": [
+      "expected",
+      "expect",
+      "testing",
+      "validate"
+    ],
+    "answer": "expect"
+  },
+  {
+    "question": "Når vi tester, hva er mest riktig?",
+    "options": [
+      "Test så mye som mulig med en test",
+      "Test kritisk funksjonalitet isolert",
+      "Test mange funksjoner i en test for å se at de virker sammen",
+      "Test alltid via nettleseren, slik løsningen brukes"
+    ],
+    "answer": "Test kritisk funksjonalitet isolert"
+  },
+  {
+    "question": "Hva er Jest og Vitest?",
+    "options": [
+      "Rammeverk brukt til testing av JavaScript",
+      "Rammeverk brukt til refaktorering av JavaScript."
+    ],
+    "answer": "Rammeverk brukt til testing av JavaScript"
+  },
+  {
+    "question": "Hva er noen av fordelene med refactoring?",
+    "options": [
+      "Bryter ned kompleks kode til mindre deler",
+      "Lager gjenbrukbar kode",
+      "Lettere å lese og forstå koden",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hvilke av disse filene skal ikke commites til GitHub?",
+    "options": [
+      "index.js",
+      "package.json",
+      ".env",
+      ".editorconfig"
+    ],
+    "answer": ".env"
+  },
+  {
+    "question": "Hva menes med asynkronitet?",
+    "options": [
+      "Vi trigger noe som blir ferdig i fremtiden",
+      "Vi blokkerer ikke arbeidsflyten",
+      "Vi venter ...",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hva skjer når vi jobber asynkront?",
+    "options": [
+      "Asynkront arbeider havner i en egen kø, kalt eventloop",
+      "Det skjer ikke noe spesielt",
+      "Asynkront arbeider havner i den samme køen som alt annet, kalt eventloop",
+      "Asynkront arbeid lager flere tråder"
+    ],
+    "answer": "Asynkront arbeider havner i en egen kø, kalt eventloop"
+  },
+  {
+    "question": "Hva gjør AJAX?",
+    "options": [
+      "Det er et fotballag fra Nederland",
+      "Ajax gjør det mulig å hente data via APIer asynkront",
+      "Ajax gjør at nettsiden refreshes når vi henter data fra APIer",
+      "Ajax brukes ikke i SPA"
+    ],
+    "answer": "Ajax gjør det mulig å hente data via APIer asynkront"
+  },
+  {
+    "question": "Hva er foretrukket format å bruke når vi henter data fra APIer?",
+    "options": [
+      "JSON",
+      "XML",
+      "UML",
+      "ADSL"
+    ],
+    "answer": "JSON"
+  },
+  {
+    "question": "Hva menes med en callback-funksjon?",
+    "options": [
+      "Det er en funksjon som kaller på backend",
+      "Det er en funksjon som venter på å bli trigget som følge av en handling vi gjør",
+      "Det er en funksjon som returnerer en Promise",
+      "Brukes til å lage anonyme funksjoner i JavaScript"
+    ],
+    "answer": "Det er en funksjon som venter på å bli trigget som følge av en handling vi gjør"
+  },
+  {
+    "question": "Hva er en Promise?",
+    "options": [
+      "Det et løfte om at noe vi venter på skal bli tilgjengelig",
+      "Det er komponent i React",
+      "Det er den gamle måten brukt til å hente innhold fra APIer",
+      "Det er et bibliotek"
+    ],
+    "answer": "Det et løfte om at noe vi venter på skal bli tilgjengelig"
+  },
+  {
+    "question": "Hvilke tre statuser har en Promise?",
+    "options": [
+      "pending, success, false",
+      "pending, resolved, error",
+      "pending, resolved, rejected",
+      "Alle de nevnte"
+    ],
+    "answer": "pending, resolved, rejected"
+  },
+  {
+    "question": "Hva kjennetegner bruken av await?",
+    "options": [
+      "Det vi venter på returnerer en Promise",
+      "At vi bruker async-nøkkelordet når vi lager en funksjon",
+      "Vi har bedre kontroll på debuggingen hvis noe skjer feil ved håndteringen av en Promise",
+      "Vi unngår callback-hell og promise-land",
+      "Alle de nevnte"
+    ],
+    "answer": "Alle de nevnte"
+  },
+  {
+    "question": "Hva mangler her? const calc = () => await add(2,3)",
+    "options": [
+      "new Promise(calc)",
+      "async",
+      "setTimeout(() => {await add(2,3)}, 2000)",
+      "Alle de nevnte"
+    ],
+    "answer": "async"
+  },
+  {
+    "question": "Hva brukes fetch og axios til?",
+    "options": [
+      "Til å oppdatere staten i React",
+      "Til å hente data fra APIer",
+      "Til å kontrollere livssyklusen til React",
+      "Til å håndtere events i React"
+    ],
+    "answer": "Til å hente data fra APIer"
+  },
+  {
+    "question": "Hva er minimum konfigurasjon for å få fetch og axios til å fungere?",
+    "options": [
+      "metoden og url",
+      "data og url",
+      "url og async",
+      "Krever ingen konfigurasjon"
+    ],
+    "answer": "metoden og url"
+  },
+  {
+    "question": "Hva menes med en sideffect?",
+    "options": [
+      "Oppstår når vi endrer eller påvirker noe utenfor selve funksjonen",
+      "Det er en bieffekt av å bruke React",
+      "Det er en bieffekt av å bruke fetch",
+      "Det oppstår når vi har rene funksjoner"
+    ],
+    "answer": "Oppstår når vi endrer eller påvirker noe utenfor selve funksjonen"
+  },
+  {
+    "question": "Hva skjer i React når sideffects oppstår?",
+    "options": [
+      "Ingen ting",
+      "Komponenten rendres på nytt",
+      "Vi får en error",
+      "Databasen blir oppdatert"
+    ],
+    "answer": "Komponenten rendres på nytt"
+  },
+  {
+    "question": "Hvordan er livssyklusen til en komponent?",
+    "options": [
+      "Born, alive, dead",
+      "New, updated, old",
+      "mount, update, dead",
+      "mount, update, unmount"
+    ],
+    "answer": "mount, update, unmount"
+  },
+  {
+    "question": "Hva bruker vi useEffect til?",
+    "options": [
+      "Koble oss på livssyklusen til en komponent",
+      "Oppdatere staten til en komponent",
+      "Hente data fra et API",
+      "Animere komponenter i React"
+    ],
+    "answer": "Koble oss på livssyklusen til en komponent"
+  },
+  {
+    "question": "Hvilken av disse er riktig når vi kun ønsker å trigge useEffect på mount?",
+    "options": [
+      "useEffect(() => {})",
+      "useEffect(() => {},[])",
+      "useEffect(() => {},[mount])",
+      "useEffect(() => {},[input])"
+    ],
+    "answer": "useEffect(() => {},[])"
+  },
+  {
+    "question": "Hvordan bruker React navnet til å skille mellom hva som er et hook, og hva som er en vanlig funksjon?",
+    "options": [
+      "Funksjonen er 'camelCase'",
+      "Funksjonen må inneholde ordet 'hook'",
+      "Funksjonen må starte med ordet 'hook'",
+      "Funksjonen må starte med ordet 'use'"
+    ],
+    "answer": "Funksjonen må starte med ordet 'use'"
+  },
+  {
+    "question": "Hvor kan man IKKE kalle et hook?",
+    "options": [
+      "Functional component",
+      "Class component",
+      "Custom hook",
+      "Alle over er ugyldige steder å kalle et hook"
+    ],
+    "answer": "Class component"
+  },
+  {
+    "question": "Hvilket hook fra React ville du brukt for å gjøre et asynkront kall første gang en komponent har lastet('mounted')?",
+    "options": [
+      "useEffect",
+      "useMounted",
+      "useState",
+      "useMemo"
+    ],
+    "answer": "useEffect"
+  },
+  {
+    "question": "Hvilket hook fra React ville du brukt for å gjøre et asynkront kall i det en komponent lastet?",
+    "options": [
+      "useEffect",
+      "useMounted",
+      "useState",
+      "useMemo"
+    ],
+    "answer": "useEffect"
+  },
+  {
+    "question": "Jeg lager et custom hook hvor jeg blant annet eksporterer en funksjon som bruker en intern state til å kalkulere og returnere en ny verdi. Jeg trenger å sikre at det ikke opprettes unødvendige instanser av funksjonen, slik at den trygt kan brukes uten å føre til re-renderinger. Hva bør jeg gjøre?",
+    "options": [
+      "Bare kall funksjonen i en useEffect i de komponentene som bruker den.",
+      "Pakk funksjonen i en useCallback, og lytt på den interne state variablen",
+      "Kopier heller funksjonen der den skal brukes",
+      "Når custom hooket skal brukes kan det legges inne i en if-sjekk for å ikke kalle det når man ikke trenger."
+    ],
+    "answer": "Pakk funksjonen i en useCallback, og lytt på den interne state variablen"
+  },
+  {
+    "question": "Det meldes om at applikasjonen går tregere og trengere jo lenger man bruker den. I applikasjonen gjøres flere tunge utregninger og sorteringer, det settes opp EventListeners, og gjøres API-kall. Jeg mistenker en memory leak, hvilket punkt under er mest relevant?",
+    "options": [
+      "Sjekk at det ikke kalles for mange API-samtidig på en side.",
+      "Test at sorteringsalgoritmene ikke er for trege.",
+      "I alle useEffect-kall hvor det settes en EventListener, sørg for at den også fjernes i en return",
+      "Bruk useReducer til å håndtere den komplekse state'n mer effektivt."
+    ],
+    "answer": "I alle useEffect-kall hvor det settes en EventListener, sørg for at den også fjernes i en return"
+  },
+  {
+    "question": "Hvilke steg gås gjennom når vi skriver inn en URL i nettleseren?",
+    "options": [
+      "Ingen, man blir automagisk sendt til riktig side",
+      "HTML rendres, CSS og JS hentes og siden vises",
+      "IP-sjekk via DNS, HTTP request, HTML rendres, CSS og JS hentes",
+      "IP-sjekk via DNS, HTTP request, HTTP response, HTML, CSS og JS, API"
+    ],
+    "answer": "IP-sjekk via DNS, HTTP request, HTML rendres, CSS og JS hentes"
+  },
+  {
+    "question": "Hva betyr statuskoder mellom 300-399?",
+    "options": [
+      "Forespørselen er vellykket",
+      "Forespørselen ble behandlet, men noe gikk galt",
+      "Forespørselen har blitt omdirigert",
+      "Forespørselen fikk serveren til å knele"
+    ],
+    "answer": "Forespørselen har blitt omdirigert"
+  },
+  {
+    "question": "Hva står REST for?",
+    "options": [
+      "Representational State Transfer",
+      "Resourceful Server Transformation",
+      "Researchable State Transit",
+      "Respectfully Super Transport"
+    ],
+    "answer": "Representational State Transfer"
+  },
+  {
+    "question": "Hva er det viktig å tenke på når man designer et REST API?",
+    "options": [
+      "At koden følger en standard og testes for feil",
+      "At strukturen er konsistent og konkret",
+      "At koden ikke avviker fra spesifikasjonen eller endres etter at spesifikasjonen er skrevet",
+      "Alle over"
+    ],
+    "answer": "Alle over"
+  },
+  {
+    "question": "Hva skjer med denne linjen? GET /api/clients/[id]",
+    "options": [
+      "Henter alle clients",
+      "Henter første client",
+      "Henter en client",
+      "Henter første client med id = id"
+    ],
+    "answer": "Henter en client"
+  },
+  {
+    "question": "Hva gjør PUT?",
+    "options": [
+      "Henter data",
+      "Oppdaterer all data og overskriver",
+      "Lagrer data",
+      "Oppdaterer kun den delen av ressursen du ønsker å modifisere"
+    ],
+    "answer": "Oppdaterer all data og overskriver"
+  },
+  {
+    "question": "Hva står CRUD for?",
+    "options": [
+      "Create, Read, Update, Delete",
+      "Create, Row, Upstream, Delete",
+      "Control, Read, Update, Downstream",
+      "Control, Row, Upstream, Downstream"
+    ],
+    "answer": "Create, Read, Update, Delete"
+  },
+  {
+    "question": "Hvilke(t) tegn brukes i filnavnet for dynamisk URL?",
+    "options": [
+      "{}",
+      "()",
+      "[]",
+      "_"
+    ],
+    "answer": "[]"
+  },
+  {
+    "question": "Hva blir filstrukturen for å hente en verdi fra API med dynamisk ID?",
+    "options": [
+      "/pages/recipes/[id].js",
+      "/pages/api/recipes/[id].js",
+      "/api/recipes/[id].js",
+      "/api/pages/recipes/[id].js"
+    ],
+    "answer": "/pages/api/recipes/[id].js"
+  },
+  {
+    "question": "Hva må vi importere for å hente den dynamiske verdien fra API'et?",
+    "options": [
+      "import { useRouter } from 'next/router';",
+      "import Link from 'next/link'",
+      "import { useEffect } from 'react'",
+      "import { NextRouter } from 'next/router'"
+    ],
+    "answer": "import { useRouter } from 'next/router';"
+  },
+  {
+    "question": "Hva slags relasjon er dette: Hunden Taxi har en eier, men eieren har 2 hunder til",
+    "options": [
+      "En-til-en",
+      "En-til-mange",
+      "Mange-til-mange",
+      "Mange-til-en"
+    ],
+    "answer": "En-til-mange"
+  },
+  {
+    "question": "Hva står ORM for?",
+    "options": [
+      "Oriental rug making",
+      "Optional-relationship marriage",
+      "Object-relational markup",
+      "Object-relational mapping"
+    ],
+    "answer": "Object-relational mapping"
+  },
+  {
+    "question": "Hvorfor skal du bruke Prisma?",
+    "options": [
+      "For å lettere snakke med databasen",
+      "For å slippe å skrive rå SQL",
+      "Fordi det er enklere å forstå",
+      "Alle over"
+    ],
+    "answer": "Alle over"
+  },
+  {
+    "question": "Hva kan vi bruke for å fylle databasen vår med data?",
+    "options": [
+      "seed",
+      "feed",
+      "fill",
+      "push"
+    ],
+    "answer": "seed"
+  },
+  {
+    "question": "Hva gjør C i MVC?",
+    "options": [
+      "Definerer hvilke data applikasjonen skal inneholde og har kontroll på staten til programmet",
+      "Oppdaterer modellen og/eller visningen basert på input fra brukerne eller krav til applikasjonen",
+      "Presenterer data i et format bestemt av oss, for eksempel HTML",
+      "Alle over"
+    ],
+    "answer": "Oppdaterer modellen og/eller visningen basert på input fra brukerne eller krav til applikasjonen"
+  },
+  {
+    "question": "User stories er mye brukt i utvikling av Software. Hva er riktig form på en user story?",
+    "options": [
+      "Når jeg __, så vil jeg ___",
+      "Jeg vil __, fordi __ alle andre ___",
+      "Som en ___, vil jeg ___, fordi ___",
+      "I går fikk jeg ___, fordi jeg ___, så nå trenger jeg ___"
+    ],
+    "answer": "Som en ___, vil jeg ___, fordi ___"
+  },
+  {
+    "question": "Trello / Jira / Azure Dev ops er eksempler på verktøy som brukes til å",
+    "options": [
+      "Skrive fagartikler",
+      "Skrive kode",
+      "Styre og planlegge arbeidsprosessen",
+      "Dokumentere kode",
+      "Alle de nevnte"
+    ],
+    "answer": "Styre og planlegge arbeidsprosessen"
+  },
+  {
+    "question": "Når vi jobber med Software er det viktig med en naturlig arbeidsprosess. Hvilken av disse arbeidsprosessene er riktige?",
+    "options": [
+      "Spesifisere, designe og implementere, verifisere og validere",
+      "Utvikle i Visual Studio Code",
+      "Implementere, designe og teste",
+      "Ingen av de nevnte"
+    ],
+    "answer": "Spesifisere, designe og implementere, verifisere og validere"
+  },
+  {
+    "question": "Waterfall arbeidsprosess er mer smidig, iterativ og fokuserer mer på samarbeid og kommunikasjon enn Agil arbeidsprosess?",
+    "options": [
+      "Ja",
+      "Nei"
+    ],
+    "answer": "Nei"
+  },
+  {
+    "question": "Git brukes til å ha versjonskontroll og ha bedre kontroll på koden når man jobber i team?",
+    "options": [
+      "Nei",
+      "Ja"
+    ],
+    "answer": "Ja"
+  },
+  {
+    "question": "Når vi jobber med Git er det vanlig å lage brancher. Hvilke av disse grunnene er bakgrunnen for dette?",
+    "options": [
+      "Unngå at master / main blir påvirket mens man utvikler deler av applikasjonen",
+      "Gjøre det mulig å jobbe uavhengig av hverandre mens man utvikler en feature / retter en bug",
+      "Holde koden sin hemmelig for de andre i teamet",
+      "Gjøre det vanskeligere å samarbeide og mer uoversiktlig",
+      "Alle de nevnte"
+    ],
+    "answer": "Gjøre det mulig å jobbe uavhengig av hverandre mens man utvikler en feature / retter en bug"
+  },
+  {
+    "question": "Hva var overordnet læringsmål i dette faget?",
+    "options": [
+      "Lære hvordan utvikle backend webapplikasjoner med moderne verktøy?",
+      "Lære hvordan utvikle frontend webapplikasjoner med moderne verktøy, for å bli bedre rustet til må møte jobbhverdagen",
+      "Lære hvordan utvikle fullstack webapplikasjoner med moderne verktøy, for å bli bedre rustet til må møte jobbhverdagen",
+      "Lære hvordan bruke excel til å sette opp årsregnskap?",
+      "Lære hvordan kommunisere med Wordpress for å bygge moderne webapplikasjoner?",
+      "Lære hvordan bruke Zoom og Slack"
+    ],
+    "answer": "Lære hvordan utvikle frontend webapplikasjoner med moderne verktøy, for å bli bedre rustet til må møte jobbhverdagen"
+  },
+  {
+    "question": "Når vi jobber som utviklerer er det en rekke arbeidsskisser vi bør kjenne til. Hvilke av disse?",
+    "options": [
+      "Excel, Word og Powerpoint",
+      "Flowcharts, Wireframes og UML",
+      "Algorithmer, design patterns og arkitektur",
+      "VSCode, GitHub og Git",
+      "Node, JavaScript og API"
+    ],
+    "answer": "Flowcharts, Wireframes og UML"
+  },
+  {
+    "question": "Kanban brukes til",
+    "options": [
+      "Å tegne arkitekturtegniner av applikasjonen",
+      "Versjonskontroll av koden",
+      "Å få bedre kontroll over utviklingsprosessen",
+      "Å lage user stories",
+      "Å skrive kode"
+    ],
+    "answer": "Å få bedre kontroll over utviklingsprosessen"
+  }
+]

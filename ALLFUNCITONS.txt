@@ -1,0 +1,136 @@
+
+
+
+
+
+
+
+
+    function clickButton(i) {
+        let buttons = document.querySelectorAll(".segmented-button button")
+        buttons.forEach((button) => {
+            button.classList.remove("clicked")
+        })
+        buttons[i].classList.add("clicked")
+    }
+
+    function GetIndexFromData(element) {
+        // Assuming the element's datatype attribute is in the format 'y:[value] x:[value]'
+        let dataType = element.getAttribute('datakey');
+        if (dataType) {
+            currentQuestion = parseInt(dataType)
+            QuestionChange()
+        } else {
+            console.log("datatype attribute not found");
+        }
+    }
+
+    /*
+    function GetIndexFromData(element) {
+        // Assuming the element's datatype attribute is in the format 'y:[value] x:[value]'
+        let dataType = element.getAttribute('datatype');
+        if (dataType) {
+            let yxValues = dataType.match(/y:\[(\d+)\]\s+x:\[(\d+)\]/);
+            if (yxValues && yxValues.length === 3) {
+                let y = parseInt(yxValues[1], 10);
+                let x = parseInt(yxValues[2], 10);
+                currentQuestion[0] = y
+                currentQuestion[1] = x
+                console.log(`y: ${y}, x: ${x}`);
+                QuestionChange()
+            } else {
+                console.log("Invalid datatype format");
+            }
+        } else {
+            console.log("datatype attribute not found");
+        }
+    }*/
+
+    function ChangeQuestion(n) { //-1 or +1
+        currentQuestion += n; // Increment or decrement based on the argument
+        if (currentQuestion < 0) {
+            currentQuestion = 0; // Prevent going below the first question
+        } else if (currentQuestion >= questionIndexList.length) {
+            currentQuestion = questionIndexList.length - 1; // Prevent going past the last question
+        }
+        QuestionChange();
+        handleItemClickIndex(currentQuestion);
+        updateNavigationButtons();
+    }
+
+    function QuestionChange() {
+        // Check if currentQuestion indices are within bounds
+        // Correct indices
+        //let questionNumber = FindQuestionNumber(currentQuestion);
+        console.log(`Current Question Number: ${currentQuestion}`);
+
+        // Retrieve the question and answer using y and x
+        GetQuestion(questionIndexList[currentQuestion]);
+
+        // Call DisplayQuestion function
+        DisplayQuestion();  // Assuming DisplayQuestion is defined elsewhere
+        if (currentQuestion > 0 && currentQuestion < questionIndexList.length) {
+        } else {
+            // Handle out-of-bounds or invalid case
+            console.error("Invalid question indices:", currentQuestion);
+            // Additional error handling or reset logic here
+        }
+    }
+
+
+    function FindQuestionNumber(i) {
+        var currQues = (i[0] + 1) + (i[0])
+        return currQues
+    }
+    function FindQuestionIndex(n) {
+        let count = 0;
+        for (const [outerIndex, childArray] of Object.entries(questionIndexList)) {
+            for (const [innerIndex, item] of childArray.entries()) {
+                count++;
+                if (count === n) {
+                    return [parseInt(outerIndex), parseInt(innerIndex)];
+                }
+            }
+        }
+        return [-1, -1]; // Return a default value if the question number is not found
+    }
+
+
+
+    function GetQuestion(objectContainingXandY) { //y first child, x other children
+        console.log(objectContainingXandY)
+        var tema = temalist[objectContainingXandY.y]
+        // Flytt console.log-ene inn i funksjonen
+        console.log(tema)
+        console.log(Object.keys(jsonData["spørsmål"])[tema]);
+
+
+        var temaData = jsonData["spørsmål"].find(item => item.tema === tema);
+
+        questionfromjson = Object.keys(temaData["spørsmål"])[objectContainingXandY.x];
+        answerfromjson = temaData.spørsmål[questionfromjson];
+        console.log(objectContainingXandY)
+    }
+
+
+
+
+
+
+
+
+
+    /*
+        // Usage example:
+        let numberOfQuestionsToGenerate = 5; // Change this to the desired number
+        getRandomUniqueQuestions(numberOfQuestionsToGenerate)
+            .then(generatedQuestions => {
+                console.log(generatedQuestions);
+            })*/
+
+
+
+
+    /*GetQuestion(0)
+    GetQuestion(1)
+    GetQuestion(3)*/
