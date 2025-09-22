@@ -25,7 +25,7 @@
             <div id="feedback"></div>
             <div id="correct-answer"></div>
         </div>
-        
+
     </div>
 
 <script>
@@ -132,10 +132,10 @@
 
     if (selectedOption === currentQuestion.answer) {
       feedbackEl.textContent = 'Riktig!';
-      feedbackEl.style.color = 'green';
+      feedbackEl.style.color = '#00ff00';
     } else {
       feedbackEl.textContent = 'Feil';
-      feedbackEl.style.color = 'red';
+      feedbackEl.style.color = '#ff0000';
       // Finn og marker det feil valgte svaret
       Array.from(optionsEl.children).forEach(li => {
         if (li.textContent === selectedOption) {
