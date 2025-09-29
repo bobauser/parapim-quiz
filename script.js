@@ -1,0 +1,135 @@
+let jsonFileURL = "multiplechoice.json"
+let jsonData = [];
+let selectedOption = '';
+let currentQuestionIndex = 0;
+let currentAnswer = '';
+
+function setJsonUrl(newUrl) {
+    jsonFileURL = newUrl
+}
+
+function scrollToSection(id) {
+    // const element = document.getElementById(id);
+    const element = document.getElementById("question");
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        console.warn(`Element med ID "${id}" ble ikke funnet.`);
+    }
+}
+
+// Funksjon for å initialisere quiz med data fra JSON-fil
+async function getExam(specificUrl) {
+console.log("Ok, lets try to get the quiz")
+try {
+//   const response = await fetch('multiplechoice.json');
+    const response = await fetch(jsonFileURL);
+    console.log("Here is the response")
+    console.log(response)
+    if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    jsonData = await response.json();
+    generateRandomOrder(); // Generer en tilfeldig rekkefølge etter å ha lastet data
+    loadQuestion(); // Når data er lastet, vis første spørsmål
+} catch (error) {
+    console.error('Could not load the JSON data: ', error);
+}
+}
+
+function shuffleArray(array) {
+for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+}
+}
+
+let questionOrder = []; // Array for å holde på tilfeldig rekkefølge av indekser
+
+// Generer en tilfeldig rekkefølge når JSON-dataene er lastet
+function generateRandomOrder() {
+questionOrder = [...jsonData.keys()]; // Opprett en array med indekser
+shuffleArray(questionOrder); // Bland rekkefølgen tilfeldig
+}
+
+// Funksjon for å vise spørsmål og alternativer
+function loadQuestion() {
+if (questionOrder.length > 0 && currentQuestionIndex < questionOrder.length) {
+    const questionIndex = questionOrder[currentQuestionIndex];
+    const currentQuestion = jsonData[questionIndex];
+    const questionEl = document.getElementById('question');
+    const optionsEl = document.getElementById('options');
+    const feedbackEl = document.getElementById('feedback');
+    const correctAnswerEl = document.getElementById('correct-answer');
+    questionEl.textContent = currentQuestion.question;
+    optionsEl.innerHTML = ''; // Fjern tidligere alternativer
+    feedbackEl.textContent = ''; // Fjern tidligere tilbakemelding
+    correctAnswerEl.textContent = '';
+    currentAnswer = jsonData[questionOrder[currentQuestionIndex]].answer;
+
+    currentQuestion.options.forEach(option => {
+    const li = document.createElement('li');
+    li.textContent = option;
+    li.addEventListener('click', () => selectOption(option, li));
+    optionsEl.appendChild(li);
+    });
+}
+}
+
+function loadNextQuestion() {
+if (currentQuestionIndex < questionOrder.length - 1) {
+    currentQuestionIndex++;
+    selectedOption = '';
+    loadQuestion();
+} else {
+    alert('Dette var det siste spørsmålet i quizen!');
+}
+}
+
+// Funksjon for å håndtere valg av et alternativ
+function selectOption(option, li) {
+selectedOption = option; // Lagre det valgte svaret
+const optionsEl = document.getElementById('options');
+Array.from(optionsEl.children).forEach(child => {
+    child.classList.remove('selected', 'correct', 'incorrect');
+    child.style.backgroundColor = ''; // Fjern bakgrunnsfarge
+    child.style.border = ''; // Fjern border
+});
+li.classList.add('selected');
+li.style.border = '2px solid #4F38FF'; // Legg til border for valgt alternativ
+}
+
+// Funksjon for å sjekke svaret når brukeren sender det inn
+function checkAnswer() {
+const feedbackEl = document.getElementById('feedback');
+const correctAnswerEl = document.getElementById('correct-answer');
+const optionsEl = document.getElementById('options');
+const currentQuestion = jsonData[questionOrder[currentQuestionIndex]]; // Hent nåværende spørsmål
+
+Array.from(optionsEl.children).forEach(li => {
+    li.style.border = '';
+    if (li.textContent === currentQuestion.answer) {
+    li.style.backgroundColor = '#83FF77'; // Grønn bakgrunn for riktig svar
+    }
+});
+
+if (selectedOption === currentQuestion.answer) {
+    feedbackEl.textContent = 'Riktig!';
+    feedbackEl.style.color = '#00ff00';
+} else {
+    feedbackEl.textContent = 'Feil';
+    feedbackEl.style.color = '#ff0000';
+    // Finn og marker det feil valgte svaret
+    Array.from(optionsEl.children).forEach(li => {
+    if (li.textContent === selectedOption) {
+        li.style.backgroundColor = '#FF7783'; // Rød bakgrunn for feil svar
+    }
+    });
+}
+
+correctAnswerEl.textContent = 'Riktig svar: ' + currentQuestion.answer;
+}
+
+document.addEventListener('DOMContentLoaded', getExam);
+document.getElementById('next').addEventListener('click', loadNextQuestion);
+document.getElementById('submit').addEventListener('click', checkAnswer);

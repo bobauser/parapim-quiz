@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Which HTML tag is used to create a hyperlink?",
+    "options": ["<a>", "<link>", "<href>", "<hyperlink>"],
+    "answer": "<a>"
+  },
+  {
+    "question": "What does CSS stand for?",
+    "options": ["Computer Style Sheets", "Creative Style Sheets", "Cascading Style Sheets", "Colorful Style Sheets"],
+    "answer": "Cascading Style Sheets"
+  },
+  {
+    "question": "Which property is used to change the background color in CSS?",
+    "options": ["bgcolor", "background-color", "color", "background"],
+    "answer": "background-color"
+  },
+  {
+    "question": "In JavaScript, which symbol is used for single-line comments?",
+    "options": ["//", "/*", "#", "<!--"],
+    "answer": "//"
+  },
+  {
+    "question": "What is the correct syntax to declare a variable in JavaScript?",
+    "options": ["variable myVar;", "var myVar;", "v myVar;", "declare myVar;"],
+    "answer": "var myVar;"
+  },
+  {
+    "question": "Which method is used to add an element to the end of an array in JavaScript?",
+    "options": ["push()", "pop()", "shift()", "unshift()"],
+    "answer": "push()"
+  },
+  {
+    "question": "In React, what is used to pass data from a parent component to a child component?",
+    "options": ["state", "props", "context", "hooks"],
+    "answer": "props"
+  },
+  {
+    "question": "Which React hook is used to manage state in a functional component?",
+    "options": ["useEffect", "useContext", "useReducer", "useState"],
+    "answer": "useState"
+  },
+  {
+    "question": "What does JSX stand for in React?",
+    "options": ["Java Syntax Extension", "JavaScript and XHTML", "JavaScript XML", "JavaScript Syntax"],
+    "answer": "JavaScript XML"
+  },
+  {
+    "question": "Which statement is true about HTML elements?",
+    "options": [
+      "HTML elements cannot have attributes",
+      "HTML elements are case-sensitive",
+      "HTML elements can be nested within each other",
+      "HTML elements must always have a closing tag"
+    ],
+    "answer": "HTML elements can be nested within each other"
+  },
+  {
+    "question": "Which of the following is true about inline elements?",
+    "options": [
+      "They do not start on a new line.",
+      "They only take up as much width as necessary.",
+      "Both A and B are correct.",
+      "They can contain block-level elements."
+    ],
+    "answer": "Both A and B are correct."
+  },
+  {
+    "question": "What will happen if you provide an empty array [] as the dependency array in useEffect?",
+    "options": [
+      "The effect will run on every re-render.",
+      "The effect will run only on the first render.",
+      "The effect will not run at all.",
+      "The effect will run when specific state changes."
+    ],
+    "answer": "The effect will run only on the first render."
+  },
+  {
+    "question": "What does the HTML element <span> do?",
+    "options": [
+      "Defines structure for the document and groups content",
+      "Makes text bold",
+      "Inline container for text or other inline elements",
+      "Defines a larger heading"
+    ],
+    "answer": "Inline container for text or other inline elements"
+  },
+  {
+    "question": "What is the purpose of the onClick attribute in a React component?",
+    "options": [
+      "It sets the button's color",
+      "It defines how often the button can be clicked",
+      "It specifies the function to call when the button is clicked",
+      "It styles the button"
+    ],
+    "answer": "It specifies the function to call when the button is clicked"
+  },
+  {
+    "question": "What will be the output of the following JavaScript code?\n\nvar a = \"5\";\nvar b = 5;\nif (a === b) {\n  console.log(a);\n} else {\n  console.log(b);\n}",
+    "options": ["\"5\"", "5", "undefined", "Error"],
+    "answer": "5"
+  }
+]
