@@ -8,6 +8,8 @@
 </head>
 <body>
 
+  <h1>Quiz Applikasjon</h1>
+
     <div class="card">
 
         <div id="question">
@@ -28,12 +30,30 @@
 
     </div>
 
+  <footer>
+    <span>Quiz 2025</span>
+    <span>Development in Platform Ecosystems</span>
+    <button class="black-button" onclick="scrollToSection('top')">
+        Go to the top
+    </button>
+  </footer>
+
 <script>
   let jsonFileURL = "multiplechoice.json"
   let jsonData = [];
   let selectedOption = '';
   let currentQuestionIndex = 0;
   let currentAnswer = '';
+
+  function scrollToSection(id) {
+      // const element = document.getElementById(id);
+      const element = document.getElementById("question");
+      if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+          console.warn(`Element med ID "${id}" ble ikke funnet.`);
+      }
+  }
 
   // Funksjon for å initialisere quiz med data fra JSON-fil
   async function getExam() {
