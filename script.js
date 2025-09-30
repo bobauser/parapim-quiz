@@ -130,6 +130,10 @@ if (selectedOption === currentQuestion.answer) {
 correctAnswerEl.textContent = 'Riktig svar: ' + currentQuestion.answer;
 }
 
-document.addEventListener('DOMContentLoaded', getExam);
-document.getElementById('next').addEventListener('click', loadNextQuestion);
-document.getElementById('submit').addEventListener('click', checkAnswer);
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    getExam();
+    document.getElementById('next').addEventListener('click', loadNextQuestion);
+    document.getElementById('submit').addEventListener('click', checkAnswer);
+});
