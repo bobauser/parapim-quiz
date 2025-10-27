@@ -351,6 +351,7 @@
       "It updates weights of a model to decrease its loss.",
       "It is a part of single layer perceptron training pipeline.",
       "Backpropagation is computationally efficient, because it can skip layers of an artificial neural networks."
-       "answer": "It updates weights of a model to decrease its loss."
+    ],
+    "answer": "It updates weights of a model to decrease its loss."
   }
 ]
