@@ -1,0 +1,356 @@
+[
+  {
+    "question": "In Search/Optimization, what is true about exploration?",
+    "options": [
+      "Exploration is only used for continuous optimization",
+      "Hill climbing is a purely exploratory technique",
+      "Exhaustive search is a purely exploratory technique",
+      "Gradient Descent does more exploration than exploitation"
+    ],
+    "answer": "Exhaustive search is a purely exploratory technique"
+  },
+  {
+    "question": "Which is true about optimization algorithms?",
+    "options": [
+      "Simulated annealing balances exploitation and exploration with the temperature parameter",
+      "Simulated annealing only selects neighbor solutions that are better than the current solution",
+      "Hillclimbing has more randomness than simulated annealing",
+      "Gradient descent can be used for discrete optimization"
+    ],
+    "answer": "Simulated annealing balances exploitation and exploration with the temperature parameter"
+  },
+  {
+    "question": "Which is typically not a part of an evolutionary algorithm (EA)?",
+    "options": [
+      "A termination criterion",
+      "A temperature control",
+      "A fitness function",
+      "A population"
+    ],
+    "answer": "A temperature control"
+  },
+  {
+    "question": "Which is not a variation operator in Evolutionary Algorithms?",
+    "options": [
+      "Fitness Sharing",
+      "Recombination",
+      "Crossover",
+      "Mutation"
+    ],
+    "answer": "Fitness Sharing"
+  },
+  {
+    "question": "What property of the elements of a solution do we often try to conserve when doing mutation and crossover on a permutation-based genotype?",
+    "options": [
+      "Gradients",
+      "Concurrency",
+      "Sum",
+      "Adjacency"
+    ],
+    "answer": "Adjacency"
+  },
+  {
+    "question": "What is the selection probability of each individual given Fitness Proportional selection?",
+    "options": [
+      "Individual 1: 1/3. Individual 2: 1/3. Individual 3: 1/3",
+      "Individual 1: 0. Individual 2: 0. Individual 3: 1",
+      "Individual 1: 1/6. Individual 2: 2/6. Individual 3: 3/6",
+      "Individual 1: 0. Individual 2: 1/3. Individual 3: 2/3"
+    ],
+    "answer": "Individual 1: 1/6. Individual 2: 2/6. Individual 3: 3/6"
+  },
+  {
+    "question": "Assume we now wanted to do fitness sharing during selections... How would that affect their fitness scores?",
+    "options": [
+      "Individual 3 would become more likely to be selected, the other two less likely to be selected",
+      "Individual 1 would become more likely to be selected, the other two less likely to be selected",
+      "Individual 2 and 3 would become more likely to be selected, individual 1 less likely to be selected",
+      "Individual 2 would become more likely to be selected, the other two less likely to be selected"
+    ],
+    "answer": "Individual 1 would become more likely to be selected, the other two less likely to be selected"
+  },
+  {
+    "question": "Which is not a method to encourage diversity in evolutionary algorithms?",
+    "options": [
+      "Fitness Sharing",
+      "Elitism",
+      "Crowding",
+      "Speciation"
+    ],
+    "answer": "Elitism"
+  },
+  {
+    "question": "Which two differ most between multiobjective and single-objective evolutionary algorithms?",
+    "options": [
+      "Genetic representations",
+      "Selection Methods",
+      "Techniques for diversity maintenance",
+      "Variation operators"
+    ],
+    "answer": "Selection Methods, Techniques for diversity maintenance"
+  },
+  {
+    "question": "Assume we have a multiobjective problem with 2 objectives, f1 and f2. Which two solutions are pareto optimal?",
+    "options": [
+      "2",
+      "5",
+      "6",
+      "7",
+      "3",
+      "4",
+      "1"
+    ],
+    "answer": "7, 1"
+  },
+  {
+    "question": "Assume we are in state S1 and perform action A2. We observe a reward of 1... calculate the updated Q-value Q(S1, A2)",
+    "options": [
+      "0.31",
+      "0.51",
+      "0.91",
+      "0.71"
+    ],
+    "answer": "0.71"
+  },
+  {
+    "question": "Which is not true about SARSA?",
+    "options": [
+      "SARSA assumes we are following a greedy policy when calculating Q-value updates",
+      "SARSA uses a learning rate in its Q-value calculation",
+      "SARSA iteratively updates its estimates of Q",
+      "SARSA is an example of on-policy learning"
+    ],
+    "answer": "SARSA assumes we are following a greedy policy when calculating Q-value updates"
+  },
+  {
+    "question": "You have a dataset with 1000 instances in total... Which two of the following statements are true?",
+    "options": [
+      "The training set of data split 2 contains 800 instances.",
+      "The training set of split 1 and the validation set of split 2 have 0 common instances.",
+      "The training set of split 1 and the validation set of split 2 have 100 common instances.",
+      "The training set of data split 1 contains 900 instances.",
+      "The training set of split 2 and the validation set of split 2 have 200 common instances.",
+      "The training set of split 1 and the validation set of split 2 have 200 common instances."
+    ],
+    "answer": "The training set of data split 2 contains 800 instances., The training set of split 1 and the validation set of split 2 have 200 common instances."
+  },
+  {
+    "question": "Which statement is true about the image above?",
+    "options": [
+      "The image shows an example of underfitting, where the blue line represents the training loss and the red line the validation loss.",
+      "The image shows an example of underfitting, where the blue line represents the validation loss and the red line the training loss.",
+      "The image shows an example of overfitting, where the blue line represents the training loss and the red line the validation loss.",
+      "The image shows an example of overfitting, where the blue line represents the validation loss and the red line the training loss."
+    ],
+    "answer": "The image shows an example of overfitting, where the blue line represents the training loss and the red line the validation loss."
+  },
+  {
+    "question": "What is the value of the L2 norm/distance of the weight vector w=[1,0.5,3,0.4]?",
+    "options": [
+      "4.9",
+      "10.41",
+      "9.8",
+      "9.6"
+    ],
+    "answer": "10.41"
+  },
+  {
+    "question": "Which two statements are true?",
+    "options": [
+      "Adding regularization to a logistic regression model increases the bias.",
+      "In a kNN model, the smaller the value of k, the smaller the variance.",
+      "In a kNN model, the smaller the value of k, the smaller the bias.",
+      "Adding regularization to a logistic regression model increases the variance."
+    ],
+    "answer": "Adding regularization to a logistic regression model increases the bias., In a kNN model, the smaller the value of k, the smaller the bias."
+  },
+  {
+    "question": "You have a kNN-based classifier, a logistic regression classifier and a feed-forward neural network with 2 hidden layers... If you want to combine them into one voting classifier, you can use:",
+    "options": [
+      "soft vote",
+      "both soft vote and hard vote",
+      "neither soft vote nor hard vote",
+      "hard vote"
+    ],
+    "answer": "hard vote"
+  },
+  {
+    "question": "Which statement is true about deep neural networks?",
+    "options": [
+      "The dot product is commonly used as the activation function in a hidden layer.",
+      "There is usually no activation function in a hidden layer.",
+      "ReLU is commonly used as the activation function in a hidden layer.",
+      "Softmax is commonly used as the activation function in a hidden layer."
+    ],
+    "answer": "ReLU is commonly used as the activation function in a hidden layer."
+  },
+  {
+    "question": "Which two statements are true?",
+    "options": [
+      "Convolutional neural networks (CNNs) are particularly well suited for processing images.",
+      "RNNs are difficult to train because they suffer from vanishing gradients.",
+      "LSTMs are a type of convolutional neural network.",
+      "Recurrent neural networks (RNNs) only support text data on the input side but cannot generate text."
+    ],
+    "answer": "Convolutional neural networks (CNNs) are particularly well suited for processing images., RNNs are difficult to train because they suffer from vanishing gradients."
+  },
+  {
+    "question": "Consider a set of data points distributed as in part (a) of the figure above... Which method(s) will cluster the data into the two clusters shown with different colors in part (b)?",
+    "options": [
+      "(1) - only hierarchical clustering with single linkage",
+      "neither (1) nor (2)",
+      "both (1) and (2)",
+      "(2) - only k-means clustering."
+    ],
+    "answer": "(1) - only hierarchical clustering with single linkage"
+  },
+  {
+    "question": "Which two statements are true about autoencoders?",
+    "options": [
+      "Autoencoders are a type of autoregressive model.",
+      "Variational autoencoders can be used to generate synthetic data similar to the input.",
+      "Denoising autoencoders use the same input and output data.",
+      "Autoencoders can be used to produce compressed representations of the input data."
+    ],
+    "answer": "Variational autoencoders can be used to generate synthetic data similar to the input., Autoencoders can be used to produce compressed representations of the input data."
+  },
+  {
+    "question": "You have a data set with sample points represented as two-dimensional vectors... Which statement is true?",
+    "options": [
+      "Moving all sample points by +1 unit on the x axis changes the result of the PCA.",
+      "Rotating all sample points by 90° in clockwise direction changes the result of the PCA.",
+      "Running the PCA algorithm with a different random seed changes the result of the PCA.",
+      "Moving all sample points by -1 unit on the x axis and +1 unit on the y axis changes the result of the PCA."
+    ],
+    "answer": "Rotating all sample points by 90° in clockwise direction changes the result of the PCA."
+  },
+  {
+    "question": "Which two statements are true about symbolic and rule-based AI?",
+    "options": [
+      "Can only be successfully applied to limited domains.",
+      "Focuses on induction rather than deduction.",
+      "Can pass the Turing test more easily than other AI approaches.",
+      "Is based on the computational theory of mind."
+    ],
+    "answer": "Can only be successfully applied to limited domains., Is based on the computational theory of mind."
+  },
+  {
+    "question": "Which statement describes the concept of connectionism best?",
+    "options": [
+      "Each neuron in the human brain has a specific function...",
+      "Networks without hidden layers can only solve linearly separable problems...",
+      "Connectionism states that neural networks should only have fully connected hidden layers.",
+      "The human brain consists of a huge neural network..."
+    ],
+    "answer": "The human brain consists of a huge neural network, therefore artificial intelligence is best modelled with an artificial neural network."
+  },
+  {
+    "question": "What is the derivative of the function f(x)= x^2?",
+    "options": [
+      "x",
+      "0",
+      "1",
+      "x^2"
+    ],
+    "answer": "x"
+  },
+  {
+    "question": "You are given a feed-forward neural network (FFNN)... What is the (approximate) probability the network will assign to the predicted class, if the input to the last layer is h=?",
+    "options": [
+      "0.21",
+      "0.58",
+      "1.00",
+      "0.13"
+    ],
+    "answer": "0.58"
+  },
+  {
+    "question": "When evaluated on a test set, your classifier yields 10 true positives (TP)... What is the F1 score of your classifier?",
+    "options": [
+      "0.74",
+      "0.77",
+      "0.37",
+      "5.41"
+    ],
+    "answer": "0.74"
+  },
+  {
+    "question": "What is the simplest and fastest to compute of the following non-linear activation functions?",
+    "options": [
+      "Hyperbolic tangent",
+      "Sigmoid",
+      "Softmax",
+      "Rectified linear unit (ReLU)"
+    ],
+    "answer": "Rectified linear unit (ReLU)"
+  },
+  {
+    "question": "What is true about standard scaling of the features in the context of supervised machine learning?",
+    "options": [
+      "Scaling usually makes the classifier more computationally efficient.",
+      "You cannot scale the data if you don't know their true labels.",
+      "Scaling always improves the classifier performance.",
+      "Scaling makes data more interpretable."
+    ],
+    "answer": "Scaling usually makes the classifier more computationally efficient."
+  },
+  {
+    "question": "For a classification task, you are using a standard perceptron with step activation function... What value will this perceptron produce at the output?",
+    "options": [
+      "-2",
+      "1",
+      "8",
+      "0"
+    ],
+    "answer": "0"
+  },
+  {
+    "question": "What does it mean for a classifier to be 'linear'?",
+    "options": [
+      "Its decision boundary is always linear.",
+      "Its training loss plot looks like a straight line.",
+      "It trains in linear time to the amount of training data.",
+      "Its inference (prediction) time is linear to the amount of test data."
+    ],
+    "answer": "Its decision boundary is always linear."
+  },
+  {
+    "question": "You are testing a linear regression system on two test data points... What is the mean square error (MSE) of this system?",
+    "options": [
+      "5.5",
+      "1.0",
+      "0.0",
+      "8.5"
+    ],
+    "answer": "8.5"
+  },
+  {
+    "question": "To solve a 3-class classification problem... What is the cross-entropy loss on this data point?",
+    "options": [
+      "-1.35",
+      "0.35",
+      "1/3",
+      "1.35"
+    ],
+    "answer": "1.35"
+  },
+  {
+    "question": "This is an update rule for weights of a classifier: w_i,j = w_i,j - η(y_j - t_j)x_i. In this rule, what does η ('eta') denote?",
+    "options": [
+      "target label",
+      "loss",
+      "gradient",
+      "learning rate"
+    ],
+    "answer": "learning rate"
+  },
+  {
+    "question": "What is true about the backpropagation algorithm?",
+    "options": [
+      "It is used when testing artificial neural networks on unseen data.",
+      "It updates weights of a model to decrease its loss.",
+      "It is a part of single layer perceptron training pipeline.",
+      "Backpropagation is computationally efficient, because it can skip layers of an artificial neural networks."
+       "answer": "It updates weights of a model to decrease its loss."
+  }
+]

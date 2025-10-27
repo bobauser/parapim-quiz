@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Development Ecosystems - Quiz</title>
+  <link rel="stylesheet" href="ezstyle.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <h1>Maskinlæring og Kunstig Intelligens
+    <a href="index.html">Gå tilbake til vanlig quiz</a>
+  </h1>
+
+    <div class="card">
+
+        <div id="question">
+
+        </div>
+
+        <ul id="options">
+
+        </ul>
+
+        <button id="submit" class="default blue">Sjekk Svar</button>
+        <button id="next" class="default gray">Neste Spørsmål</button>
+
+        <div class="response-bar">
+            <div id="feedback"></div>
+            <div id="correct-answer"></div>
+        </div>
+
+    </div>
+
+  <footer>
+    <span>Quiz 2025</span>
+    <span>Maskinlæring og Kunstig Intelligens</span>
+    <button class="black-button" onclick="scrollToSection('question')">
+        Go to the top
+    </button>
+  </footer>
+
+  <h3 style="color: white;">Versjon 1.0</h3>
+
+</body>
+
+<script>
+  setJsonUrl("maskinlæringAIeksamen.json")
+</script>
+
+<style>
+  body {
+    background-color: #acacac;
+  }
+
+  .card {
+    background-color: #d6d2c4;
+  }
+</style>
+
+</html>
