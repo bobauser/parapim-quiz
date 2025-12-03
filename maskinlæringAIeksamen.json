@@ -87,7 +87,7 @@
       "Techniques for diversity maintenance",
       "Variation operators"
     ],
-    "answer": "Selection Methods, Techniques for diversity maintenance"
+    "answer": ["Selection Methods", "Techniques for diversity maintenance"]
   },
   {
     "question": "Assume we have a multiobjective problem with 2 objectives, f1 and f2. Which two solutions are pareto optimal?",
@@ -100,7 +100,7 @@
       "4",
       "1"
     ],
-    "answer": "7, 1"
+    "answer": ["7", "1"]
   },
   {
     "question": "Assume we are in state S1 and perform action A2. We observe a reward of 1... calculate the updated Q-value Q(S1, A2)",
@@ -132,7 +132,7 @@
       "The training set of split 2 and the validation set of split 2 have 200 common instances.",
       "The training set of split 1 and the validation set of split 2 have 200 common instances."
     ],
-    "answer": "The training set of data split 2 contains 800 instances., The training set of split 1 and the validation set of split 2 have 200 common instances."
+    "answer": ["The training set of data split 2 contains 800 instances.", "The training set of split 1 and the validation set of split 2 have 200 common instances."]
   },
   {
     "question": "Which statement is true about the image above?",
@@ -162,7 +162,7 @@
       "In a kNN model, the smaller the value of k, the smaller the bias.",
       "Adding regularization to a logistic regression model increases the variance."
     ],
-    "answer": "Adding regularization to a logistic regression model increases the bias., In a kNN model, the smaller the value of k, the smaller the bias."
+    "answer": ["Adding regularization to a logistic regression model increases the bias.", "In a kNN model, the smaller the value of k, the smaller the bias."]
   },
   {
     "question": "You have a kNN-based classifier, a logistic regression classifier and a feed-forward neural network with 2 hidden layers... If you want to combine them into one voting classifier, you can use:",
@@ -192,7 +192,7 @@
       "LSTMs are a type of convolutional neural network.",
       "Recurrent neural networks (RNNs) only support text data on the input side but cannot generate text."
     ],
-    "answer": "Convolutional neural networks (CNNs) are particularly well suited for processing images., RNNs are difficult to train because they suffer from vanishing gradients."
+    "answer": ["Convolutional neural networks (CNNs) are particularly well suited for processing images.", "RNNs are difficult to train because they suffer from vanishing gradients."]
   },
   {
     "question": "Consider a set of data points distributed as in part (a) of the figure above... Which method(s) will cluster the data into the two clusters shown with different colors in part (b)?",
@@ -212,7 +212,7 @@
       "Denoising autoencoders use the same input and output data.",
       "Autoencoders can be used to produce compressed representations of the input data."
     ],
-    "answer": "Variational autoencoders can be used to generate synthetic data similar to the input., Autoencoders can be used to produce compressed representations of the input data."
+    "answer": ["Variational autoencoders can be used to generate synthetic data similar to the input.", "Autoencoders can be used to produce compressed representations of the input data."]
   },
   {
     "question": "You have a data set with sample points represented as two-dimensional vectors... Which statement is true?",
@@ -232,7 +232,7 @@
       "Can pass the Turing test more easily than other AI approaches.",
       "Is based on the computational theory of mind."
     ],
-    "answer": "Can only be successfully applied to limited domains., Is based on the computational theory of mind."
+    "answer": ["Can only be successfully applied to limited domains.", "Is based on the computational theory of mind."]
   },
   {
     "question": "Which statement describes the concept of connectionism best?",
@@ -242,7 +242,7 @@
       "Connectionism states that neural networks should only have fully connected hidden layers.",
       "The human brain consists of a huge neural network..."
     ],
-    "answer": "The human brain consists of a huge neural network, therefore artificial intelligence is best modelled with an artificial neural network."
+    "answer": "The human brain consists of a huge neural network..." 
   },
   {
     "question": "What is the derivative of the function f(x)= x^2?",

@@ -13,7 +13,13 @@
     <a href="index.html">Gå tilbake til vanlig quiz</a>
   </h1>
 
-    <div class="card">
+    <div class="card" id="quiz-card">
+
+      <header>
+        <span id="points">Poeng: 0</span>
+
+        <div id="isMc">Multiple Choice!</div>
+      </header>
 
         <div id="question">
 
@@ -33,6 +39,12 @@
 
     </div>
 
+    <div class="card restart-quiz hidden">
+      <h1>Quiz ferdig!</h1>
+      <h3>Ta quizen på nytt!</h3>
+      <button id="restart-quiz-button">Retry</button>
+    </div>
+
   <footer>
     <span>Quiz 2025</span>
     <span>Maskinlæring og Kunstig Intelligens</span>
@@ -41,7 +53,7 @@
     </button>
   </footer>
 
-  <h3 style="color: white;">Versjon 1.0</h3>
+  <h3 style="color: white;">Versjon 1.1  Oppdatert 3. Desember</h3>
 
 </body>
 
@@ -56,6 +68,26 @@
 
   .card {
     background-color: #d6d2c4;
+  }
+
+  header {
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: #00000070;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  #isMc {
+    padding: 8px;
+    background-color: #32b3ce;
+    border-radius: 15px;
   }
 </style>
 
