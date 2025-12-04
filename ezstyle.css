@@ -66,6 +66,12 @@ footer {
     outline: none;
     border: 2px solid white;
     font-size: large;
+    transition: 0.3s;
+}
+.black-button:hover {
+    background-color: #505050;
+    color: #8f8f8f;
+    border: 2px solid #fb9c00;
 }
 
 #question {
@@ -97,6 +103,7 @@ ul li {
     margin-top: 10px;
     cursor: pointer;
     border-radius: 5px;
+    outline: 5px solid transparent;
     font-size: 2rem;
     transition: 0.3s;
 }
@@ -162,8 +169,15 @@ ul li:hover {
 }
 
 
+.incorrect.selected  {
+    outline-color: #bdb9da;
+}
+.correct.selected  {
+    outline-color: #1ed4af;
+}
+
 .selected {
-    border: 2px solid #4F38FF; /* Border for valgt alternativ */
+    outline-color: #4F38FF; /* Border for valgt alternativ */
 }
 
 .correct {
@@ -173,6 +187,7 @@ ul li:hover {
 .incorrect {
     background-color: #FF7783; /* Rød bakgrunn for feil svar */
 }
+
 
 .hidden {
     display: none;

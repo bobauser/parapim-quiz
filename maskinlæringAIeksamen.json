@@ -20,6 +20,16 @@
     "answer": "Simulated annealing balances exploitation and exploration with the temperature parameter"
   },
   {
+    "question": "Which one is NOT a “Discrete” optimization problem?",
+    "options": [
+      "Traveling salesman problem.",
+      "Finding a course time table with the minimum number of clashes for registered students.",
+      "Knapsack problem: Given a set of items, each with a weight and a value, determine which items to include...",
+      "Designing parts of an airplane."
+    ],
+    "answer": "Designing parts of an airplane."
+  },
+  {
     "question": "Which is typically not a part of an evolutionary algorithm (EA)?",
     "options": [
       "A termination criterion",

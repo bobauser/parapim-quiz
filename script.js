@@ -4,6 +4,7 @@ let userAnswers = [];
 let currentQuestionIndex = 0;
 let correctAnswers = [];
 let multipleChoiceQues = false
+let potentialPoints = 0
 let points = 0
 let questionPointsToAdd = 0
 
@@ -23,18 +24,21 @@ function scrollToSection(id) {
 
 // Funksjon for å initialisere quiz med data fra JSON-fil
 async function getExam(specificUrl) {
-    console.log("Ok, lets try to get the quiz")
+    // console.log("Ok, lets try to get the quiz")
     try {
     //   const response = await fetch('multiplechoice.json');
         const response = await fetch(jsonFileURL);
-        console.log("Here is the response")
-        console.log(response)
+        // console.log("Here is the response")
+        // console.log(response)
         if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
         }
         jsonData = await response.json();
         generateRandomOrder(); // Generer en tilfeldig rekkefølge etter å ha lastet data
         loadQuestion(); // Når data er lastet, vis første spørsmål
+        let emergencybutton = document.getElementById('test-questions-emergency')
+        if (emergencybutton)
+            emergencybutton.remove()
     } catch (error) {
         console.error('Could not load the JSON data: ', error);
         let respBar = document.querySelector(".response-bar")
@@ -45,10 +49,13 @@ async function getExam(specificUrl) {
         respBar.appendChild(buttonToCreateTests)
 
         document.getElementById('test-questions-emergency').addEventListener('click', loadTestData);
+        document.getElementById('restart-quiz-button').addEventListener('click', RestartQuiz);
+        
     }
 }
 
 function loadTestData () {
+    jsonFileURL = "test"
     console.log("Generate the new test questions")
     jsonData = [
             {
@@ -95,7 +102,9 @@ function loadTestData () {
 
     generateRandomOrder(); // Generer en tilfeldig rekkefølge etter å ha lastet data
     loadQuestion(); // Når data er lastet, vis første spørsmål
-    document.getElementById('test-questions-emergency').remove()
+    let emergencybutton = document.getElementById('test-questions-emergency')
+    if (emergencybutton)
+        emergencybutton.remove()
 }
 
 function shuffleArray(array) {
@@ -127,8 +136,8 @@ function loadQuestion() {
         feedbackEl.textContent = ''; // Fjern tidligere tilbakemelding
         correctAnswerEl.textContent = '';
         let answers = jsonData[questionOrder[currentQuestionIndex]].answer
-        console.log("IS mc obj? ")
-        console.log(typeof(answers) === "object")
+        // console.log("IS mc obj? ")
+        // console.log(typeof(answers) === "object")
         if (typeof(answers) === "object") {
             multipleChoiceQues = true
             displayMcTag(true)
@@ -136,15 +145,17 @@ function loadQuestion() {
             for (let a in jsonData[questionOrder[currentQuestionIndex]].answer) {
                 correctAnswers.push(jsonData[questionOrder[currentQuestionIndex]].answer[a])
             }
+            potentialPoints += correctAnswers.length
             
         }
         else {
             displayMcTag(false)
             multipleChoiceQues = false
+            potentialPoints += 1
             correctAnswers = [jsonData[questionOrder[currentQuestionIndex]].answer];
         }
-        console.log("Answers: " + answers)
-        console.log("Answers2: " + correctAnswers)
+        // console.log("Answers: " + answers)
+        // console.log("Answers2: " + correctAnswers)
 
 
         currentQuestion.options.forEach(option => {
@@ -166,31 +177,56 @@ function displayMcTag(status) {
 }
 
 function loadNextQuestion() {
+    console.log("Poeng totalt oppnnådd")
+    console.log(points)
+    userAnswers = [];
+    points += questionPointsToAdd
+    document.getElementById("points").innerText = "Poeng: " + points
+    questionPointsToAdd = 0
+
     if (currentQuestionIndex < questionOrder.length - 1) {
         currentQuestionIndex++;
-        userAnswers = [];
-        points += questionPointsToAdd
-        document.getElementById("points").innerText = "Poeng: " + points
         loadQuestion();
     } else {
-        alert('Dette var det siste spørsmålet i quizen!');
+        finishQuiz()
+        // alert('Dette var det siste spørsmålet i quizen!');
     }
 }
 
 function finishQuiz() {
     let quizCard = document.getElementById("quiz-card")
-    let restartMenu = document.getElementById("restart-quiz-button")
+    let restartMenu = document.getElementById("restart-card")
+    let pointsFinish = document.getElementById("finished-quiz-points")
 
     quizCard.classList.add("hidden")
     restartMenu.classList.remove("hidden")
+
+    pointsFinish.innerText = "Poeng: " + points + " / " + potentialPoints + " mulige poeng"
 }
 
 function RestartQuiz() {
+    
+    let quizCard = document.getElementById("quiz-card")
+    let restartMenu = document.getElementById("restart-card")
+
+    if (jsonFileURL === "test") {
+        loadTestData()
+    } else {
+        getExam()
+    }
+
+    quizCard.classList.remove("hidden")
+    restartMenu.classList.add("hidden")
+
     currentQuestionIndex = 0;
     correctAnswers = [];
     multipleChoiceQues = false
     points = 0
     questionPointsToAdd = 0
+    potentialPoints = 0
+    document.getElementById("points").innerText = "Poeng: " + points
+    generateRandomOrder(); // Generer en tilfeldig rekkefølge etter å ha lastet data
+    loadQuestion(); // Når data er lastet, vis første spørsmål
 }
 
 // Funksjon for å håndtere valg av et alternativ
@@ -203,36 +239,23 @@ function SelectOption(option, li, mc = false) {
     {
         Array.from(optionsEl.children).forEach(child => {
             child.classList.remove('selected', 'correct', 'incorrect');
-            child.style.backgroundColor = ''; // Fjern bakgrunnsfarge
-            child.style.border = ''; // Fjern border
         });
+        userAnswers = [];
     }
 
     console.log("MULTIPLE CHOICE" + mc)
     if (!alreadyThere) {
-        if (!mc) {
-            userAnswers = []
-        }
-        userAnswers.push(option); // Lagre det valgte svaret
-    }
-    else {
-        
-        if (!mc) {
-            userAnswers = []
-        } else
-            userAnswers.pop(option)
-    }
-
-
-    if (!alreadyThere) {
+        userAnswers.push(option);
         li.classList.add('selected');
-        li.style.border = '2px solid #4F38FF';
+    } else if (mc) {
+        userAnswers = userAnswers.filter(a => a !== option);
+        li.classList.remove('selected', 'incorrect');
     } else {
-        li.classList.remove('selected', 'correct', 'incorrect');
-        li.style.backgroundColor = ''; // Fjern bakgrunnsfarge
-        li.style.border = '';
+        userAnswers = [];
+        li.classList.remove('selected', 'incorrect');
     }
-    console.log(userAnswers)
+    // li.classList.remove('selected', 'correct', 'incorrect');
+    
 }
 
 // Funksjon for å sjekke svaret når brukeren sender det inn
@@ -242,13 +265,14 @@ function checkAnswer() {
     const optionsEl = document.getElementById('options');
     const currentQuestion = jsonData[questionOrder[currentQuestionIndex]]; // Hent nåværende spørsmål
 
-    console.log("Here is the answerlist")
-    console.log(correctAnswers)
+    // console.log("Here is the answerlist")
+    // console.log(correctAnswers)
 
     Array.from(optionsEl.children).forEach(li => { //MARKER RIKTIG I GRØNT
         li.style.border = '';
         if (correctAnswers.includes(li.textContent)) {
-            li.style.backgroundColor = '#83FF77'; // Grønn bakgrunn for riktig svar
+            // li.style.backgroundColor = '#83FF77'; // Grønn bakgrunn for riktig svar
+            li.classList.add("correct")
         }
     });
 
@@ -257,34 +281,30 @@ function checkAnswer() {
     let amountCorrect = 0
     let amountWrong = 0
 
-    console.log("Har bruker svart?")
-    console.log(userAnswers.length > 0 ? "ja" : "nei")
-    console.log("Multiplechoice?")
-    console.log(multipleChoiceQues ? "ja" : "nei")
+    // console.log("Har bruker svart?")
+    // console.log(userAnswers.length > 0 ? "ja" : "nei")
+    // console.log("Multiplechoice?")
+    // console.log(multipleChoiceQues ? "ja" : "nei")
 
     if (userAnswers.length > 0) {
         if (multipleChoiceQues) {
-            for (let answer in userAnswers) {
-                console.log("userAnswer X = " + correctAnswers[answer])
-                console.log("userAnswer X = " + answer)
-                console.log("Har bruker svart riktig?")
-                if (userAnswers.includes(correctAnswers[answer])) {
-                    console.log("ja")
-                    amountCorrect++
-                    questionPointsToAdd += 1
+
+            for (let ans of userAnswers) {
+                if (correctAnswers.includes(ans)) {
+                    amountCorrect++;
+                    questionPointsToAdd++;
                 } else {
-                    console.log("nei")
-                    amountWrong++
-                    if (questionPointsToAdd > 0)
-                        questionPointsToAdd -= 1
+                    amountWrong++;
+                    questionPointsToAdd--;
                 }
             }
 
-            if (amountCorrect == correctAnswers.length) {
-                isCorrect = true
-            }
-            console.log("Har bruker svart riktig på alle spørsmål?")
-            console.log(amountCorrect == correctAnswers.length ? "ja" : "nei")
+            if (questionPointsToAdd < 0)
+                questionPointsToAdd = 0;
+
+            isCorrect = (amountCorrect === correctAnswers.length && amountWrong === 0);
+            // console.log("Har bruker svart riktig på alle spørsmål?")
+            // console.log(amountCorrect == correctAnswers.length ? "ja" : "nei")
             
 
         } else if (userAnswers[0] === correctAnswers[0]) {
@@ -292,19 +312,26 @@ function checkAnswer() {
             questionPointsToAdd = 1
         } else {
             isCorrect = false
+            questionPointsToAdd = 0
         }
     } // skip the whole thing if no answer given
 
-    console.log("Har bruker svart riktig på alle spørsmål?")
-    console.log(isCorrect ? "ja" : "nei")
-    console.log("Hvis ja, da bør bruker få mer enn 0 poeng:")
-    console.log(questionPointsToAdd)
+    if (questionPointsToAdd < 0)
+        questionPointsToAdd = 0
 
-    if (isCorrect) {
+    // console.log("Har bruker svart riktig på alle spørsmål?")
+    // console.log(isCorrect ? "ja" : "nei")
+    // console.log("Hvis ja, da bør bruker få mer enn 0 poeng:")
+    // console.log(questionPointsToAdd)
+
+    if (isCorrect && amountWrong < 1) {
         feedbackEl.textContent = 'Riktig!';
         feedbackEl.style.color = '#00ff00';
     } else if (amountWrong > 0 && amountCorrect > 0) {
         feedbackEl.textContent = 'Miks!';
+        feedbackEl.style.color = '#ffd000ff';
+    } else if (amountCorrect > 0 && amountWrong === 0 && !isCorrect) {
+        feedbackEl.textContent = 'Æsj! Du bommet!';
         feedbackEl.style.color = '#ffd000ff';
     } else {
         feedbackEl.textContent = 'Feil';
@@ -320,16 +347,19 @@ function checkAnswer() {
             {
             }
             else {
-                li.style.backgroundColor = '#FF7783'; // Rød bakgrunn for feil svar
+                // li.style.backgroundColor = '#FF7783'; // Rød bakgrunn for feil svar
+                li.classList.add("incorrect")
+
             }
         }
         });
     }
 
+    console.log("Poeng som ble oppnnådd")
     console.log(questionPointsToAdd)
     
 
-    correctAnswerEl.textContent = 'Riktig svar: ' + currentQuestion.answer + ".\nPoints gotten: " + questionPointsToAdd + " / " + correctAnswers.length + " possible";
+    correctAnswerEl.textContent = 'Riktig svar: ' + currentQuestion.answer + ".\nPoeng oppnådd: " + questionPointsToAdd + " / " + correctAnswers.length + " mulige";
 }
 
 
