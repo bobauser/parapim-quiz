@@ -7,6 +7,7 @@ let multipleChoiceQues = false
 let potentialPoints = 0
 let points = 0
 let questionPointsToAdd = 0
+let oppgavenummer = 0
 
 function setJsonUrl(newUrl) {
     jsonFileURL = newUrl
@@ -181,8 +182,9 @@ function loadNextQuestion() {
     console.log(points)
     userAnswers = [];
     points += questionPointsToAdd
-    document.getElementById("points").innerText = "Poeng: " + points
+    document.getElementById("points").innerText = poengTekst()
     questionPointsToAdd = 0
+    oppgavenummer += 1
 
     if (currentQuestionIndex < questionOrder.length - 1) {
         currentQuestionIndex++;
@@ -224,7 +226,7 @@ function RestartQuiz() {
     points = 0
     questionPointsToAdd = 0
     potentialPoints = 0
-    document.getElementById("points").innerText = "Poeng: " + points
+    document.getElementById("points").innerText = poengTekst()
     generateRandomOrder(); // Generer en tilfeldig rekkefølge etter å ha lastet data
     loadQuestion(); // Når data er lastet, vis første spørsmål
 }
@@ -360,6 +362,10 @@ function checkAnswer() {
     
 
     correctAnswerEl.textContent = 'Riktig svar: ' + currentQuestion.answer + ".\nPoeng oppnådd: " + questionPointsToAdd + " / " + correctAnswers.length + " mulige";
+}
+
+function poengTekst() {
+    return "Poeng: " + points + " / " + potentialPoints
 }
 
 
