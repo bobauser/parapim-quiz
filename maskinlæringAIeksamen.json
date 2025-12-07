@@ -348,6 +348,19 @@
     "answer": ["Can only be successfully applied to limited domains.", "Is based on the computational theory of mind."]
   },
   {
+  "question": "To measure a model's generalization performance, the data is typically split into a _____ set and a _____ set.",
+    "options": [
+      "Test set",
+      "Validation Set",
+      "Development Set",
+      "Training Set"
+    ],
+    "answer": [
+      "Test set",
+      "Training Set"
+    ]
+  },
+  {
   "question": "What can we learn in unsupervised learning?",
     "options": [
       "How to generate similar data",
