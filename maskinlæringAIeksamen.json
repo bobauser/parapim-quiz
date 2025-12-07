@@ -348,6 +348,22 @@
     "answer": ["Can only be successfully applied to limited domains.", "Is based on the computational theory of mind."]
   },
   {
+  "question": "What can we learn in unsupervised learning?",
+    "options": [
+      "How to generate similar data",
+      "How to compress the data",
+      "Analyze the data to get a Netflix subscription",
+      "How many (and which) groups are present",
+      "How to visualize the data in low dimension"
+    ],
+    "answer": [
+      "How to generate similar data",
+      "How to compress the data",
+      "How many (and which) groups are present",
+      "How to visualize the data in low dimension"
+    ]
+  },
+  {
     "question": "Which statement describes the concept of connectionism best?",
     "options": [
       "Each neuron in the human brain has a specific function...",
