@@ -8,6 +8,7 @@ let potentialPoints = 0
 let points = 0
 let questionPointsToAdd = 0
 let oppgavenummer = 0
+let figureImg = ""
 
 function setJsonUrl(newUrl) {
     jsonFileURL = newUrl
@@ -77,6 +78,7 @@ function loadTestData () {
                 "This is option Q",
                 "This is Option 4K"
                 ],
+                "image": "background1.png",
                 "answer": "This is option A"
             },
             {
@@ -137,6 +139,7 @@ function loadQuestion() {
         feedbackEl.textContent = ''; // Fjern tidligere tilbakemelding
         correctAnswerEl.textContent = '';
         let answers = jsonData[questionOrder[currentQuestionIndex]].answer
+        figureImg = jsonData[questionOrder[currentQuestionIndex]].image
         // console.log("IS mc obj? ")
         // console.log(typeof(answers) === "object")
         if (typeof(answers) === "object") {
@@ -154,6 +157,15 @@ function loadQuestion() {
             multipleChoiceQues = false
             potentialPoints += 1
             correctAnswers = [jsonData[questionOrder[currentQuestionIndex]].answer];
+        }
+
+        if (figureImg) // image exisst
+        {
+            document.getElementById("figure-section").classList.remove("hidden")
+            const img = document.querySelector("#fig1 img")
+            img.src = figureImg
+        } else {
+            document.getElementById("figure-section").classList.add("hidden")
         }
         // console.log("Answers: " + answers)
         // console.log("Answers2: " + correctAnswers)
@@ -374,4 +386,16 @@ document.addEventListener("DOMContentLoaded", function() {
     getExam();
     document.getElementById('next').addEventListener('click', loadNextQuestion);
     document.getElementById('submit').addEventListener('click', checkAnswer);
+    document.getElementById("figure-expand-btn").addEventListener("click", updateButton);
+    document.getElementById("fig1").addEventListener("click", updateButton);
 });
+
+// Figure handeling
+
+
+
+function updateButton() {
+  const fig = document.getElementById("fig1");
+  fig.classList.toggle("expanded");
+  document.getElementById("figure-expand-btn").textContent = fig.classList.contains("expanded") ? "Collapse" : "Expand";
+}

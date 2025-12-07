@@ -25,6 +25,13 @@
 
         </div>
 
+        <section id="figure-section" class="hidden">
+          <figure class="expandable" id="fig1">
+            <img src="" />
+          </figure>
+          <button id="figure-expand-btn" data-target="fig1">Expand</button>
+        </section>
+
         <ul id="options">
 
         </ul>
@@ -91,9 +98,56 @@
     border-radius: 15px;
   }
   
-.hidden {
-    display: none !important;
+  .hidden {
+      display: none !important;
+  }
+
+.expandable {
+  width: 200px;          /* collapsed size */
+  height: 200px;         /* collapsed size */
+  overflow: hidden;
+  transition: width 0.3s ease, height 0.3s ease;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: 5px solid #7e7e7e;
+    background-color: #a4a4a4;
+    padding: 8px;
 }
+
+.expandable.expanded {
+  width: 500px;          /* expanded size */
+  height: 500px;         /* expanded size */
+}
+
+.expandable img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#figure-expand-btn {
+  margin-top: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
 </style>
+<script>
+// document.querySelectorAll(".expandable").forEach(fig => {
+//   fig.addEventListener("click", () => {
+//     fig.classList.toggle("expanded");
+//     updateButton(fig.id);
+//   });
+// });
+
+// document.querySelectorAll(".expand-btn").forEach(btn => {
+//   btn.addEventListener("click", () => {
+//     const fig = document.getElementById(btn.dataset.target);
+//     fig.classList.toggle("expanded");
+//     updateButton(fig.id);
+//   });
+// });
+
+</script>
 
 </html>
