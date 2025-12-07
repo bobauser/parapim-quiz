@@ -30,6 +30,53 @@
     "answer": "Designing parts of an airplane."
   },
   {
+  "question": "Consider the individuals listed here in an evolutionary algorithm. Assume this is the full population, and you are about to do parent selection from it. You will calculate the selection probability of each individual. Note that the probability you calculate is for a single selection, not the probability that the individual gets selected into the pool of parents after N different selections. What is the selection probability of each individual given Fitness Proportional selection?",
+    "options": [
+      "Individual 1: 1/3. Individual 2: 1/3. Individual 3:1/3",
+      "Individual 1: 0. Individual 2: 0. Individual 3: 1",
+      "Individual 1: 1/6. Individual 2: 2/6. Individual 3: 3/6",
+      "Individual 1: 0. Individual 2: 1/3. Individual 3: 2/3"
+    ],
+    "answer": "Individual 1: 0. Individual 2: 1/3. Individual 3: 2/3",
+    "image": "genotypeimg.png LEGG TIL LINK 2025 vår eksamen HER!!"
+  },
+  {
+  "question": "Assume we now wanted to do fitness sharing during selections, with the same individuals as in the previous question. How would that affect their fitness scores? Assume the similarity measure between individuals is based on how many genes are in the same location in their genotype. How would the probability of selecting each individual change?",
+    "options": [
+      "Idividual 3 would become more likely to be selected, the other two less likely to be selected",
+      "Individual 1 would become more likely to be selected, the other two less likely to be selected",
+      "Individual 2 and 3 would become more likely to be selected, individual 1 less likely to be selected",
+      "Individual 2 would become more likely to be selected, the other two less likely to be selected"
+    ],
+    "answer": "Individual 1 would become more likely to be selected, the other two less likely to be selected",
+    "image": "genotypeimg.png LEGG TIL LINK 2025 vår eksamen HER!!"
+  },
+  {
+  "question": "Assume we have a multiobjective problem with 2 objectives, f1 and f2. We are aiming to maximize f1, and minimize f2. Below 7 solutions to this problem are plotted. Which two solutions are pareto optimal?",
+    "options": [
+      "2",
+      "5",
+      "6",
+      "7",
+      "3",
+      "4",
+      "1"
+    ],
+    "answer": ["7", "1"],
+    "image": "multiobjectivePNG åareto optimal lmao"
+  },
+  {
+  "question": "Consider a Reinforcement Learning environment where we are trying to learn Q-values for state/action pairs. The environment has 2 states (S1 and S2), and 2 possible actions in each state (A1 and A2). After exploring the environment, we have learned the following Q-table: Assume we are in state S1 and perform action A2. We observe a reward of 1 and notice that we next find ourselves in state S2. Calculate the updated Q-value Q(S1, A2) assuming a discount factor of 0.9 and a learning rate of 0.1. Assume we are using the normal Q-learning update function. (answer with 2 decimal numbers)",
+    "options": [
+      "0.31",
+      "0.51",
+      "0.91",
+      "0.71"
+    ],
+    "answer": "0.71",
+    "image": "taablelosl.png"
+  },
+  {
     "question": "Which is typically not a part of an evolutionary algorithm (EA)?",
     "options": [
       "A termination criterion",
@@ -152,7 +199,8 @@
       "The image shows an example of overfitting, where the blue line represents the training loss and the red line the validation loss.",
       "The image shows an example of overfitting, where the blue line represents the validation loss and the red line the training loss."
     ],
-    "answer": "The image shows an example of overfitting, where the blue line represents the training loss and the red line the validation loss."
+    "answer": "The image shows an example of overfitting, where the blue line represents the training loss and the red line the validation loss.",
+    "image": "overunderbluelinefiting.png"
   },
   {
     "question": "What is the value of the L2 norm/distance of the weight vector w=[1,0.5,3,0.4]?",
@@ -205,14 +253,15 @@
     "answer": ["Convolutional neural networks (CNNs) are particularly well suited for processing images.", "RNNs are difficult to train because they suffer from vanishing gradients."]
   },
   {
-    "question": "Consider a set of data points distributed as in part (a) of the figure above... Which method(s) will cluster the data into the two clusters shown with different colors in part (b)?",
+    "question": "Consider a set of data points distributed as in part (a) of the figure above, where every dot in the circle and in the horizontal line is a data point. Given the two following clustering algorithms: \n• (1) Hierarchical agglomerative clustering with Euclidean distance and single linkage, run with as many iterations as necessary to reach 2 clusters, \n• (2) K-means clustering with k=2, \nWhich method(s) will cluster the data into the two clusters shown with different colors in part (b)?",
     "options": [
       "(1) - only hierarchical clustering with single linkage",
       "neither (1) nor (2)",
       "both (1) and (2)",
       "(2) - only k-means clustering."
     ],
-    "answer": "(1) - only hierarchical clustering with single linkage"
+    "answer": "(1) - only hierarchical clustering with single linkage",
+    "image": "clusteringDataImage.pn"
   },
   {
     "question": "Which two statements are true about autoencoders?",
@@ -225,14 +274,68 @@
     "answer": ["Variational autoencoders can be used to generate synthetic data similar to the input.", "Autoencoders can be used to produce compressed representations of the input data."]
   },
   {
-    "question": "You have a data set with sample points represented as two-dimensional vectors... Which statement is true?",
+  "question": "Which of these search algorithms are \"Discrete\" Optimization?",
+    "options": [
+      "Exhaustive Search",
+      "Simulated annealing",
+      "Gradient descent/ascent",
+      "Greedy search & hill climbing"
+    ],
+    "answer": [
+      "Exhaustive Search",
+      "Simulated annealing",
+      "Greedy search & hill climbing"
+    ]
+  },
+  {
+  "question": "Which of these search algorithms are \"Continuous\" Optimization?",
+    "options": [
+      "Exhaustive Search",
+      "Simulated annealing",
+      "Gradient descent/ascent",
+      "Greedy search & hill climbing"
+    ],
+    "answer": [
+      "Gradient descent/ascent"
+    ]
+  },
+  {
+  "question": "What big O-notation does Hierarchical Clustering run at?",
+    "options": [
+      "O(1)",
+      "O(Log N)",
+      "O(N^2)",
+      "O (N Log N)",
+      "O(N^3)",
+      "O(N!)",
+      "F(N)",
+      "O (Log N!)"
+    ],
+    "answer": "O(N^3)"
+  },
+  {
+  "question": "What are the types and Key procedures of \"Hierarchical Clustering\"?",
+    "options": [
+      "Divisive",
+      "Partition",
+      "Agglomerative",
+      "Density"
+    ],
+    "answer": [
+      "Agglomerative",
+      "Divisive"
+    ]
+  },
+  {
+    "question": "You have a data set with sample points represented as two-dimensional vectors, as illustrated in the image above, where the first dimension is referred as x and the second as y. You apply principal component analysis (PCA) to this data set. Which statement is true?",
     "options": [
       "Moving all sample points by +1 unit on the x axis changes the result of the PCA.",
       "Rotating all sample points by 90° in clockwise direction changes the result of the PCA.",
       "Running the PCA algorithm with a different random seed changes the result of the PCA.",
       "Moving all sample points by -1 unit on the x axis and +1 unit on the y axis changes the result of the PCA."
     ],
-    "answer": "Rotating all sample points by 90° in clockwise direction changes the result of the PCA."
+    "answer": "Rotating all sample points by 90° in clockwise direction changes the result of the PCA.",
+    "image": "datapointstwo2.png"
   },
   {
     "question": "Which two statements are true about symbolic and rule-based AI?",
